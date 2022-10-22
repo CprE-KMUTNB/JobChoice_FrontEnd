@@ -22,7 +22,7 @@
             android:background="#FFECD0"
             android:fontFamily="sans-serif-condensed-medium"
             android:gravity="center"
-            android:text="EDIT PROFLIE"
+            android:text="POST"
             android:textColor="@color/black"
             android:textSize="27sp"
             android:textStyle="bold" />
@@ -54,27 +54,22 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp">
 
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/ic_baseline_person_24" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="sans-serif-condensed-light"
-                    android:text="Fullname"
+                    android:text="Job Title"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/fullname_edittxt"
+                    android:id="@+id/jobTitle_edittxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:hint="Fullname"
+                    android:hint="Job Title"
                     android:textSize="15sp" />
 
             </LinearLayout>
@@ -96,27 +91,22 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp">
 
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/ic_baseline_phone_24" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="sans-serif-condensed-light"
-                    android:text="Phone"
+                    android:text="Requirement"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/phone_edittxt"
+                    android:id="@+id/requirement_edittxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:hint = "Phone"
+                    android:hint = "Requirement"
                     android:textSize="15sp" />
 
             </LinearLayout>
@@ -138,27 +128,22 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp">
 
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/recommend" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="sans-serif-condensed-light"
-                    android:text="Education"
+                    android:text="Salary"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/education_edittxt"
+                    android:id="@+id/salary_edittxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:hint="Education"
+                    android:hint="Salary"
                     android:textSize="15sp" />
 
             </LinearLayout>
@@ -181,61 +166,22 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp">
 
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/ic_baseline_content_paste_24" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="sans-serif-condensed-light"
-                    android:text="Certificate"
-                    android:textColor="@color/black"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginRight="15dp"
-                android:background="@color/black" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp">
-
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/ic_baseline_info_24" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:fontFamily="sans-serif-condensed-light"
-                    android:text="About me"
+                    android:text="Contact"
                     android:textColor="@color/black"
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/aboutme_edittxt"
+                    android:id="@+id/contact_edittxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:hint="About me"
+                    android:hint="Contact"
                     android:textSize="15sp" />
 
             </LinearLayout>
@@ -264,7 +210,8 @@
                     android:fontFamily="sans-serif-condensed-light"
                     android:gravity="center"
                     android:paddingLeft="10dp"
-                    android:text="SAVE"
+                    android:text="POST"
+                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
             </LinearLayout>
