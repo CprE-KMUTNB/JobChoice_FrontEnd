@@ -26,7 +26,7 @@ interface SimpleApi {
         @QueryMap options: Map<String, String>
     ): Response<List<Post>>
 
-    @POST("user-api/login")
+    @POST("user/login")
     @FormUrlEncoded
     suspend fun pushPost(
         @Field("email") email : String,
