@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/register"
+    tools:context=".Register_screen">
+
+    <TextView
+        android:id="@+id/register_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:gravity="left"
+        android:text="Register"
+        android:textColor="@color/colorGreen"
+        android:textSize="35dp"
+        android:textStyle="bold" />
+
+
+
+    <EditText
+        android:id="@+id/firstname_edittxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/green_textview"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawablePadding="10dp"
+        android:hint="Firstname"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        app:met_baseColor="@color/myTextColor"
+        app:met_primaryColor="@color/myTextColor"
+        app:met_textColorHint="@color/myTextColor" />
+
+    <EditText
+        android:id="@+id/lastname_edittxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/green_textview"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawablePadding="10dp"
+        android:hint="Lastname"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        app:met_baseColor="@color/myTextColor"
+        app:met_primaryColor="@color/myTextColor"
+        app:met_textColorHint="@color/myTextColor" />
+
+    <EditText
+        android:id="@+id/email_edittxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/green_textview"
+        android:drawableLeft="@drawable/ic_baseline_mail_24"
+        android:drawablePadding="10dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        app:met_baseColor="@color/myTextColor"
+        app:met_primaryColor="@color/myTextColor"
+        app:met_textColorHint="@color/myTextColor" />
+
+    <EditText
+        android:id="@+id/contact_edittxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/green_textview"
+        android:drawableLeft="@drawable/ic_baseline_phone_24"
+        android:drawablePadding="10dp"
+        android:hint="Contact"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        app:met_baseColor="@color/myTextColor"
+        app:met_primaryColor="@color/myTextColor"
+        app:met_textColorHint="@color/myTextColor" />
+
+    <EditText
+        android:id="@+id/password_edittxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/green_textview"
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="10dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        app:met_baseColor="@color/myTextColor"
+        app:met_primaryColor="@color/myTextColor"
+        app:met_textColorHint="@color/myTextColor" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/register_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@color/colorGreen"
+        android:text="REGISTER"
+        android:textColor="#1B5E20"
+        android:textSize="20sp" />
+
+</LinearLayout>

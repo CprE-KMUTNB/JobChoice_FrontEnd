@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFECD0"
+    tools:context=".search_screen">
+
+    <TextView
+        android:id="@+id/search_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:background="#FFECD0"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:text="FINDING JOB"
+        android:textColor="@color/black"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/custom_search_view"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/search_title"/>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/searchView"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/searchView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_banner">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:gravity="center|start"
+                        android:text="BTS company"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Programmer"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:textSize="20sp"
+                        android:gravity="center"
+                        android:drawableLeft="@drawable/programmer_cir"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginBottom="5dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Requirement : "
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:fontFamily="sans-serif-condensed-light"
+                            android:textSize="20sp"
+                            android:layout_marginLeft="40dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bachelor's Degree"
+                            android:layout_marginLeft="25dp"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif-condensed-light"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Salary :"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:fontFamily="sans-serif-condensed-light"
+                            android:textSize="20sp"
+                            android:layout_marginLeft="40dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Start At 22,000 BTH"
+                            android:layout_marginLeft="25dp"
+                            android:textSize="18sp"
+                            android:fontFamily="sans-serif-condensed-light"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/image_1btn"
+                        android:layout_width="70dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/custom_button"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:text="More"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_banner">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:gravity="center|start"
+                        android:text="BTS company"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:drawableLeft="@drawable/securityguard_cir"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:gravity="center"
+                        android:text="Security Guard"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:fontFamily="sans-serif-condensed-light"
+                            android:text="Requirement : "
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="25dp"
+                            android:fontFamily="sans-serif-condensed-light"
+                            android:text="None"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:fontFamily="sans-serif-condensed-light"
+                            android:text="Salary :"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="25dp"
+                            android:fontFamily="sans-serif-condensed-light"
+                            android:text="Start At 8,000 BTH"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/image_2btn"
+                        android:layout_width="70dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/custom_button"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:text="More"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/save_btn"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="end"
+                android:background="@color/colorYellow"
+                android:drawableLeft="@drawable/ic_baseline_edit_24"
+                android:fontFamily="sans-serif-condensed-light"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:text="ADD"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
