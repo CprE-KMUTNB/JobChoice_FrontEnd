@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class profile_screen : Fragment() {
@@ -17,6 +19,8 @@ class profile_screen : Fragment() {
     lateinit var email_txt: TextView
     lateinit var education_txt: TextView
     lateinit var aboutme_txt: TextView
+    lateinit var imageView: ImageView
+    lateinit var fab : FloatingActionButton
 
     var profileEdit_screen = profileEdit_screen()
 
@@ -37,6 +41,13 @@ class profile_screen : Fragment() {
         email_txt = v.findViewById(R.id.email_txt)
         education_txt = v.findViewById(R.id.education_txt)
         aboutme_txt = v.findViewById(R.id.aboutme_txt)
+
+        imageView = v.findViewById(R.id.imageView)
+        fab = v.findViewById(R.id.floatingActionButton)
+
+        fab.setOnClickListener{
+
+        }
 
         Edit_btn = v.findViewById(R.id.Edit_btn)
         Edit_btn.setOnClickListener{

@@ -52,21 +52,19 @@ class MainActivity() : AppCompatActivity() {
             Toast.makeText(this, "Password cannot be null or empty", Toast.LENGTH_LONG).show()
             return
         }
-
-        val repository = Repository()
+        val intend = Intent(this, AfterLogin::class.java)
+        Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
+        startActivity(intend)
+        /*val repository = Repository()
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this,viewModelFactory).get(MainViewModel::class.java)
         viewModel.pushPost(email,password)
         viewModel.myResponse.observe(this, Observer { response ->
             System.out.println(response)
             if(response.isSuccessful){
-                val intend = Intent(this, AfterLogin::class.java)
-                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
-                startActivity(intend)
-                Toast.makeText(this, response.message(), Toast.LENGTH_SHORT).show()
 
             }else{
                 Toast.makeText(this, response.message(), Toast.LENGTH_SHORT).show()
             }
-        })
+        })*/
 }}

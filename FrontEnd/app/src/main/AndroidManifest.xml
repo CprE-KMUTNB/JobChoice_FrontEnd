@@ -19,17 +19,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
         android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true"
         tools:targetApi="31">
-
-        <activity android:name=".splash_screen"
-            android:theme="@style/SplashScreenTheme"
-            android:exported="true">
+        <activity
+            android:name=".AddFindingWorker_screen"
+            android:exported="false" />
+        <activity
+            android:name=".AddFindingJob_screen"
+            android:exported="false" />
+        <activity
+            android:name=".Add_screen"
+            android:exported="false" />
+        <activity
+            android:name=".splash_screen"
+            android:exported="true"
+            android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".profileEdit_screen"
@@ -80,7 +89,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
 
         <uses-library android:name="com.google.android.maps" />
     </application>
