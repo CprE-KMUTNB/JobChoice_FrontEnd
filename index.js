@@ -7,7 +7,6 @@ const jwt = require('jsonwebtoken');
 const { User } = require('./model/user');
 const auth = require('./middleware/auth');
 
-let PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 
@@ -81,7 +80,7 @@ app.get('/protected',auth, (req, res) => {
     res.send('access Success');
 });
 
-const server = app.listen(process.env.PORT || 3000, function(){
+const server = app.listen(process.env.PORT || 5000, function(){
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
