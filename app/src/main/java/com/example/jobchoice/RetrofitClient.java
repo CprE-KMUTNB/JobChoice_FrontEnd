@@ -8,7 +8,7 @@ public class RetrofitClient extends AppCompatActivity {
     private static Retrofit instance;
     public  static  Retrofit getInstance(){
         if(instance == null)
-            instance = new Retrofit.Builder().baseUrl("https://localhost:5000/")
+            instance = new Retrofit.Builder().baseUrl("https://jobchoice-app.herokuapp.com")
                     .addConverterFactory(ScalarsConverterFactory.create())
                     //.addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build();
