@@ -8,22 +8,25 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import com.example.jobchoice.network.repository.Repository
+import com.example.jobchoice.api.Post
+import com.example.jobchoice.api.SimpleAPI
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity() : AppCompatActivity() {
     lateinit var email_edittxt: EditText
     lateinit var password_edittxt:EditText
     lateinit var login_btn: Button
     lateinit var register_btn:Button
-    private lateinit var viewModel: MainViewModel
+    lateinit var simpleAPI: SimpleAPI
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
         email_edittxt = findViewById<View>(R.id.email_edittxt) as EditText
         password_edittxt = findViewById<View>(R.id.password_edittxt) as EditText
@@ -52,21 +55,42 @@ class MainActivity() : AppCompatActivity() {
             Toast.makeText(this, "Password cannot be null or empty", Toast.LENGTH_LONG).show()
             return
         }
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://jobchoice-app.herokuapp.com/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        simpleAPI = retrofit.create(SimpleAPI::class.java)
+        val post = Post(email, password)
+        val call = simpleAPI.pushPost(post)
+        call.enqueue(object : Callback<Post>{
+            override fun onResponse(call: Call<Post>, response: Response<Post>) {
+                if(response.isSuccessful){
+                    System.out.println(response)
+                    LoginSuccess()
+                }else{
+                    if(response.code() == 404){
+                        WrongEmail()
+                    }else if(response.code() == 400){
+                        WrongPassword()
+                    }
+                }
+            }
 
-        val repository = Repository()
-        val viewModelFactory = MainViewModelFactory(repository)
-        viewModel = ViewModelProvider(this,viewModelFactory).get(MainViewModel::class.java)
-        viewModel.pushPost(email,password)
-        viewModel.myResponse.observe(this, Observer { response ->
-            System.out.println(response)
-            if(response.isSuccessful){
-                val intend = Intent(this, AfterLogin::class.java)
-                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
-                startActivity(intend)
-                Toast.makeText(this, response.message(), Toast.LENGTH_SHORT).show()
-
-            }else{
-                Toast.makeText(this, response.message(), Toast.LENGTH_SHORT).show()
+            override fun onFailure(call: Call<Post>, t: Throwable) {
             }
         })
-}}
+}
+    private fun WrongEmail(){
+        Toast.makeText(this, "Email not found.", Toast.LENGTH_LONG).show()
+    }
+
+    private fun WrongPassword(){
+        Toast.makeText(this, "Invalid password.", Toast.LENGTH_LONG).show()
+    }
+
+    private fun LoginSuccess(){
+        Toast.makeText(this, "Login Success", Toast.LENGTH_LONG).show()
+        intent = Intent(this,AfterLogin::class.java)
+        startActivity(intent)
+    }
+}
