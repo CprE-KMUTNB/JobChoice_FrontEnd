@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">JOBCHOICE</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="todo">TODO</string>
+
+    <string-array name="career_array">
+        <item>Assistant Technician</item>
+        <item>Cleaning Staff</item>
+        <item>Programmer</item>
+        <item>Security Guard</item>
+        <item>Technician</item>
+    </string-array>
+</resources>
