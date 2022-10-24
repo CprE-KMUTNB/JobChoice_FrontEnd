@@ -8,7 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.jobchoice.api.Post
+import com.example.jobchoice.api.LoginPost
 import com.example.jobchoice.api.SimpleAPI
 import retrofit2.Call
 import retrofit2.Callback
@@ -60,10 +60,10 @@ class MainActivity() : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         simpleAPI = retrofit.create(SimpleAPI::class.java)
-        val post = Post(email, password)
-        val call = simpleAPI.pushPost(post)
-        call.enqueue(object : Callback<Post>{
-            override fun onResponse(call: Call<Post>, response: Response<Post>) {
+        val post = LoginPost(email, password)
+        val call = simpleAPI.loginpushPost(post)
+        call.enqueue(object : Callback<LoginPost>{
+            override fun onResponse(call: Call<LoginPost>, response: Response<LoginPost>) {
                 if(response.isSuccessful){
                     System.out.println(response)
                     LoginSuccess()
@@ -76,7 +76,7 @@ class MainActivity() : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<Post>, t: Throwable) {
+            override fun onFailure(call: Call<LoginPost>, t: Throwable) {
             }
         })
 }

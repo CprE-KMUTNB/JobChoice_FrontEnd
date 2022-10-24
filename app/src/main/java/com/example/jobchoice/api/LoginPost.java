@@ -1,9 +1,9 @@
 package com.example.jobchoice.api;
 
-public class Post {
+public class LoginPost {
     private String email, password;
 
-    public Post(String email, String password){
+    public LoginPost(String email, String password){
         this.email = email;
         this.password = password;
     }

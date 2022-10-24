@@ -20,6 +20,37 @@
         android:textSize="35dp"
         android:textStyle="bold" />
 
+    <EditText
+        android:id="@+id/email_edittxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/green_textview"
+        android:drawableLeft="@drawable/ic_baseline_mail_24"
+        android:drawablePadding="10dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        app:met_baseColor="@color/myTextColor"
+        app:met_primaryColor="@color/myTextColor"
+        app:met_textColorHint="@color/myTextColor" />
+
+    <EditText
+        android:id="@+id/password_edittxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/green_textview"
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="10dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        app:met_baseColor="@color/myTextColor"
+        app:met_primaryColor="@color/myTextColor"
+        app:met_textColorHint="@color/myTextColor" />
 
 
     <EditText
@@ -55,22 +86,6 @@
         app:met_textColorHint="@color/myTextColor" />
 
     <EditText
-        android:id="@+id/email_edittxt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/green_textview"
-        android:drawableLeft="@drawable/ic_baseline_mail_24"
-        android:drawablePadding="10dp"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        android:padding="10dp"
-        app:met_baseColor="@color/myTextColor"
-        app:met_primaryColor="@color/myTextColor"
-        app:met_textColorHint="@color/myTextColor" />
-
-    <EditText
         android:id="@+id/contact_edittxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -80,22 +95,6 @@
         android:drawablePadding="10dp"
         android:hint="Contact"
         android:inputType="text"
-        android:minHeight="48dp"
-        android:padding="10dp"
-        app:met_baseColor="@color/myTextColor"
-        app:met_primaryColor="@color/myTextColor"
-        app:met_textColorHint="@color/myTextColor" />
-
-    <EditText
-        android:id="@+id/password_edittxt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/green_textview"
-        android:drawableLeft="@drawable/ic_baseline_lock_24"
-        android:drawablePadding="10dp"
-        android:hint="Password"
-        android:inputType="textPassword"
         android:minHeight="48dp"
         android:padding="10dp"
         app:met_baseColor="@color/myTextColor"
