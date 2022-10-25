@@ -231,11 +231,11 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/ic_baseline_phone_24"/>
+                    android:src="@drawable/ic_baseline_info_24"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Contact"
+                    android:text="About me"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:fontFamily="sans-serif-condensed-light"
@@ -243,7 +243,7 @@
                     android:layout_marginLeft="5dp"/>
 
                 <TextView
-                    android:id="@+id/contact_txt"
+                    android:id="@+id/aboutme_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
@@ -261,28 +261,56 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"/>
 
-
-
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/Edit_btn"
-                    android:layout_width="180dp"
-                    android:layout_height="50dp"
+                <LinearLayout
+                    android:id="@+id/editButton_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
                     android:gravity="center"
-                    android:paddingLeft="10dp"
-                    android:drawableLeft="@drawable/ic_baseline_edit_24"
-                    android:background="@color/colorYellow"
-                    android:text="Edit Profile"
-                    android:fontFamily="sans-serif-condensed-light"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-            </LinearLayout>
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/Edit_btn"
+                        android:layout_width="180dp"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:drawableLeft="@drawable/ic_baseline_edit_24"
+                        android:background="@color/colorYellow"
+                        android:text="Edit Profile"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_below="@+id/editButton_field">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/deleteAccount_btn"
+                        android:layout_width="180dp"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:drawableLeft="@drawable/ic_baseline_delete_forever_24"
+                        android:background="@color/red"
+                        android:text="Delete Accout"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </RelativeLayout>
 
         </LinearLayout>
     </ScrollView>

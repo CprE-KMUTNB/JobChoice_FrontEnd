@@ -225,24 +225,24 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/ic_baseline_phone_24" />
+                    android:src="@drawable/ic_baseline_info_24" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="sans-serif-condensed-light"
-                    android:text="Contact"
+                    android:text="About me"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/contact_edittxt"
+                    android:id="@+id/aboutme_edittxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:hint="Contact"
+                    android:hint="About me"
                     android:textSize="15sp" />
 
             </LinearLayout>

@@ -21,7 +21,7 @@ class Register_screen : AppCompatActivity() {
     private lateinit var password_edittxt:EditText
     private lateinit var firstname_edittxt:EditText
     private lateinit var lastname_edittxt:EditText
-    private lateinit var contact_edittxt:EditText
+    private lateinit var aboutme_edittxt:EditText
     private lateinit var register_btn: Button
     lateinit var simpleAPI: SimpleAPI
 
@@ -34,7 +34,7 @@ class Register_screen : AppCompatActivity() {
         password_edittxt = findViewById<View>(R.id.password_edittxt) as EditText
         firstname_edittxt = findViewById<View>(R.id.firstname_edittxt) as EditText
         lastname_edittxt = findViewById<View>(R.id.lastname_edittxt) as EditText
-        contact_edittxt = findViewById<View>(R.id.contact_edittxt) as EditText
+        aboutme_edittxt = findViewById<View>(R.id.aboutme_edittxt) as EditText
 
         register_btn = findViewById(R.id.register_btn)
         register_btn.setOnClickListener(View.OnClickListener {
@@ -70,10 +70,10 @@ class Register_screen : AppCompatActivity() {
                 ).show()
                 return@OnClickListener
             }
-            if (TextUtils.isEmpty(contact_edittxt.text.toString())) {
+            if (TextUtils.isEmpty(aboutme_edittxt.text.toString())) {
                 Toast.makeText(
                     this@Register_screen,
-                    "Contact cannot be null or empty",
+                    "About me cannot be null or empty",
                     Toast.LENGTH_LONG
                 ).show()
                 return@OnClickListener
@@ -83,42 +83,33 @@ class Register_screen : AppCompatActivity() {
                 password_edittxt.text.toString(),
                 firstname_edittxt.text.toString(),
                 lastname_edittxt.text.toString(),
-                contact_edittxt.text.toString()
+                aboutme_edittxt.text.toString()
             )
         })
     }
-    private fun Register(email: String, password: String,firstname : String, lastname : String, contact : String) {
+    private fun Register(email: String, password: String,firstname : String, lastname : String, aboutme : String) {
         val retrofit = Retrofit.Builder()
             .baseUrl("https://jobchoice-app.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         simpleAPI = retrofit.create(SimpleAPI::class.java)
-        val post = RegisterPost(email, password, firstname, lastname, contact)
+        val post = RegisterPost(email, password, firstname, lastname, aboutme)
         val call = simpleAPI.registerpushPost(post)
         call.enqueue(object : Callback<RegisterPost> {
             override fun onResponse(call: Call<RegisterPost>, response: Response<RegisterPost>) {
                 if(response.isSuccessful){
                     System.out.println(response)
-                    RegisterSuccess();
+                    Toast.makeText(this@Register_screen, "Register Success", Toast.LENGTH_LONG).show()
+                    intent = Intent(this@Register_screen,MainActivity::class.java)
+                    startActivity(intent)
                 }else{
-                    if(response.code() == 500){
-                        CannotCreate()
-                    }
+                    System.out.println(response)
+                    Toast.makeText(this@Register_screen, "Cannot create user", Toast.LENGTH_LONG).show()
                 }
             }
 
             override fun onFailure(call: Call<RegisterPost>, t: Throwable) {
             }
         })
-    }
-
-    private fun CannotCreate(){
-        Toast.makeText(this, "Cannot create user", Toast.LENGTH_LONG).show()
-    }
-
-    private fun RegisterSuccess(){
-        Toast.makeText(this, "Register Success", Toast.LENGTH_LONG).show()
-        intent = Intent(this,MainActivity::class.java)
-        startActivity(intent)
     }
 }

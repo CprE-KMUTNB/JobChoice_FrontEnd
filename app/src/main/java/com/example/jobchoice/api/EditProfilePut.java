@@ -1,18 +1,16 @@
 package com.example.jobchoice.api;
 
 public class EditProfilePut {
-    private String old_email,firstname, lastname, email, password,contact;
+    private String firstname, lastname, email, password,aboutme;
 
-    public EditProfilePut(String old_email,String firstname, String lastname, String email, String password,String contact){
-        this.old_email = old_email;
+    public EditProfilePut(String firstname, String lastname, String email, String password,String aboutme){
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.password = password;
-        this.contact = contact;
+        this.aboutme = aboutme;
     }
 
-    public String getOld_email(){ return  old_email;}
 
     public String getFirstname(){
         return firstname;
@@ -31,7 +29,7 @@ public class EditProfilePut {
     }
 
     public String getContact(){
-        return contact;
+        return aboutme;
     }
 
 }

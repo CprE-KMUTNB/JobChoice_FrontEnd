@@ -86,14 +86,14 @@
         app:met_textColorHint="@color/myTextColor" />
 
     <EditText
-        android:id="@+id/contact_edittxt"
+        android:id="@+id/aboutme_edittxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/green_textview"
-        android:drawableLeft="@drawable/ic_baseline_phone_24"
+        android:drawableLeft="@drawable/ic_baseline_info_24"
         android:drawablePadding="10dp"
-        android:hint="Contact"
+        android:hint="About me"
         android:inputType="text"
         android:minHeight="48dp"
         android:padding="10dp"
