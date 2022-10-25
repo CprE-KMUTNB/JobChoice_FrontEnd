@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FFECD0"
-    tools:context=".profileEdit_screen">
+    tools:context=".WorkerFinding_screen">
 
     <LinearLayout
         android:id="@+id/profile_title"
@@ -16,16 +16,34 @@
         android:orientation="vertical"
         android:paddingTop="15dp">
 
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#FFECD0"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:gravity="center"
-            android:text="EDIT PROFLIE"
-            android:textColor="@color/black"
-            android:textSize="27sp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#FFECD0"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:text="ADD"
+                android:textColor="@color/black"
+                android:textSize="27sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/title"
+                android:background="#FFECD0"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:text="(Worker Finding)"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
 
         <View
             android:layout_width="match_parent"
@@ -64,17 +82,17 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="sans-serif-condensed-light"
-                    android:text="Firstname"
+                    android:text="Job Title"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/firstname_edittxt"
+                    android:id="@+id/jobTitle_edittxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:hint="Firstname"
+                    android:hint="Job Title"
                     android:textSize="15sp" />
 
             </LinearLayout>
@@ -99,24 +117,24 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/ic_baseline_person_24" />
+                    android:src="@drawable/ic_baseline_attach_money_24" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="sans-serif-condensed-light"
-                    android:text="Lastname"
+                    android:text="Salary"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/lastname_edittxt"
+                    android:id="@+id/salary_edittxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:hint="Lastname"
+                    android:hint="Salary"
                     android:textSize="15sp" />
 
             </LinearLayout>
@@ -141,108 +159,24 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/ic_baseline_mail_24" />
+                    android:src="@drawable/ic_baseline_info_24" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="sans-serif-condensed-light"
-                    android:text="Email"
+                    android:text="Requirement"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/email_edittxt"
+                    android:id="@+id/requirement_edittxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:hint="Contact"
-                    android:textSize="15sp" />
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="15dp"
-                android:background="@color/black" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="22dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp">
-
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/ic_baseline_lock_24" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:fontFamily="sans-serif-condensed-light"
-                    android:text="Password"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/password_edittxt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:hint="Contact"
-                    android:textSize="15sp" />
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="15dp"
-                android:background="@color/black" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="22dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp">
-
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/ic_baseline_phone_24" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:fontFamily="sans-serif-condensed-light"
-                    android:text="Contact"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/contact_edittxt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:hint="Contact"
+                    android:hint="Requirement"
                     android:textSize="15sp" />
 
             </LinearLayout>
@@ -264,7 +198,7 @@
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/save_btn"
+                    android:id="@+id/add_btn"
                     android:layout_width="180dp"
                     android:layout_height="50dp"
                     android:background="@color/colorYellow"
@@ -272,11 +206,10 @@
                     android:fontFamily="sans-serif-condensed-light"
                     android:gravity="center"
                     android:paddingLeft="10dp"
-                    android:text="SAVE"
+                    android:text="ADD"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

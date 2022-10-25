@@ -11,8 +11,9 @@ class AfterLogin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_afterlogin)
-
         val animatedBottomBar = findViewById<AnimatedBottomBar>(R.id.animatedBottomBar)
+
+        val email = intent.getStringExtra("email")
 
         if (savedInstanceState == null) {
             animatedBottomBar.selectTabById(R.id.profile, true)
@@ -21,6 +22,8 @@ class AfterLogin : AppCompatActivity() {
             fragmentManager.beginTransaction().replace(R.id.fragment_container, profilescreen)
                 .commit()
         }
+        val bundle = Bundle()
+        bundle.putString("email",email)
         animatedBottomBar.setOnTabSelectListener(object : AnimatedBottomBar.OnTabSelectListener {
             override fun onTabSelected(lastIndex: Int, lastTab: AnimatedBottomBar.Tab?, newIndex: Int, newTab: AnimatedBottomBar.Tab) {
                 var fragment: Fragment? = null

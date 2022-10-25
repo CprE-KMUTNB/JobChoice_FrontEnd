@@ -91,6 +91,7 @@ class MainActivity() : AppCompatActivity() {
     private fun LoginSuccess(){
         Toast.makeText(this, "Login Success", Toast.LENGTH_LONG).show()
         intent = Intent(this,AfterLogin::class.java)
+        intent.putExtra("email","")
         startActivity(intent)
     }
 }
