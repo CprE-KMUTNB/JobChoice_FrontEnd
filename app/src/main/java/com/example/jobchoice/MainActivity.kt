@@ -65,7 +65,9 @@ class MainActivity() : AppCompatActivity() {
         call.enqueue(object : Callback<LoginPost>{
             override fun onResponse(call: Call<LoginPost>, response: Response<LoginPost>) {
                 if(response.isSuccessful){
+                    System.out.println(response.body())
                     LoginSuccess()
+
                 }else{
                     if(response.code() == 404){
                         WrongEmail()
