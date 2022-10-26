@@ -82,6 +82,48 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="sans-serif-condensed-light"
+                    android:text="Company Name"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/companyName_edittxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:hint="Company Name"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_baseline_person_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="sans-serif-condensed-light"
                     android:text="Job Title"
                     android:textColor="@color/black"
                     android:textSize="20sp"
@@ -102,6 +144,90 @@
                 android:layout_height="0.5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="12dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_baseline_content_paste_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:text="Requirement"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/requirement_edittxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:hint="Requirement"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_baseline_info_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:text="Details"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/details_edittxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:hint="Details"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="15dp"
                 android:background="@color/black" />
 
@@ -143,7 +269,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="15dp"
                 android:background="@color/black" />
 
@@ -159,24 +285,24 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/ic_baseline_info_24" />
+                    android:src="@drawable/ic_baseline_phone_24" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:fontFamily="sans-serif-condensed-light"
-                    android:text="Requirement"
+                    android:text="Contact"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/requirement_edittxt"
+                    android:id="@+id/contact_edittxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:hint="Requirement"
+                    android:hint="Contact"
                     android:textSize="15sp" />
 
             </LinearLayout>
@@ -189,6 +315,72 @@
                 android:layout_marginRight="15dp"
                 android:background="@color/black" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_baseline_image_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:text="Image"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/image_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:src="@drawable/ic_baseline_image_24" />
+
+                    <TextView
+                        android:id="@+id/image_txtview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:layout_below="@id/image_view"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:text="Tap to Select image"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar"
+                        android:layout_below="@id/image_txtview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:max="100"
+                        android:progress="40" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@color/black" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -198,15 +390,30 @@
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/uploadImage_btn"
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:background="@color/teal_200"
+                    android:drawableLeft="@drawable/ic_baseline_image_24"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:gravity="center"
+                    android:text="Upload Image"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/add_btn"
                     android:layout_width="180dp"
                     android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
                     android:background="@color/colorYellow"
                     android:drawableLeft="@drawable/ic_baseline_edit_24"
                     android:fontFamily="sans-serif-condensed-light"
                     android:gravity="center"
                     android:paddingLeft="10dp"
                     android:text="ADD"
+                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
             </LinearLayout>

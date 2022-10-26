@@ -5,6 +5,7 @@ import retrofit2.Response;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
 import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -18,8 +19,15 @@ public interface SimpleAPI {
     @POST("user/register")
     Call<RegisterPost> registerpushPost(@Body RegisterPost registerpost);
 
-    @GET("user/profile/")
-    Call<ProfileGet> profilepushGet();
+    @POST("user/post")
+    Call<WorkerFindingPost> workerFindingpushPost(@Body WorkerFindingPost workerFindingPost);
+
+    @POST("user/post2")
+    Call<JobFindingPost> jobFindingpushPost(@Body JobFindingPost jobFindingPost);
+
+
+    @GET("user/get/{id}")
+    Call<ProfileGet> profilepushGet(@Path("id") String id);
 
     @DELETE("user/delete/{id}")
     Call<Void> userpushDelete(@Path("id") String id);

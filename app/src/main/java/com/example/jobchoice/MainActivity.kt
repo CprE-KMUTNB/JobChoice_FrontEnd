@@ -46,7 +46,7 @@ class MainActivity() : AppCompatActivity() {
             startActivity(intent)
         }
     }
-    private fun Login(email: String, password: String) {
+    private fun Login(email: String, password: String){
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(this, "Email cannot be null or empty", Toast.LENGTH_LONG).show()
             return
@@ -65,32 +65,20 @@ class MainActivity() : AppCompatActivity() {
         call.enqueue(object : Callback<LoginPost>{
             override fun onResponse(call: Call<LoginPost>, response: Response<LoginPost>) {
                 if(response.isSuccessful){
-                    LoginSuccess()
+                    System.out.println(response)
+                    Toast.makeText(this@MainActivity, "Login.", Toast.LENGTH_LONG).show()
+                    intent = Intent(this@MainActivity,AfterLogin::class.java)
+                    startActivity(intent)
                 }else{
                     if(response.code() == 404){
-                        WrongEmail()
+                        Toast.makeText(this@MainActivity, "Email not found.", Toast.LENGTH_LONG).show()
                     }else if(response.code() == 400){
-                        WrongPassword()
+                        Toast.makeText(this@MainActivity, "Invalid password.", Toast.LENGTH_LONG).show()
                     }
                 }
             }
-
             override fun onFailure(call: Call<LoginPost>, t: Throwable) {
             }
         })
 }
-    private fun WrongEmail(){
-        Toast.makeText(this, "Email not found.", Toast.LENGTH_LONG).show()
-    }
-
-    private fun WrongPassword(){
-        Toast.makeText(this, "Invalid password.", Toast.LENGTH_LONG).show()
-    }
-
-    private fun LoginSuccess(){
-        Toast.makeText(this, "Login Success", Toast.LENGTH_LONG).show()
-        intent = Intent(this,AfterLogin::class.java)
-        intent.putExtra("email","")
-        startActivity(intent)
-    }
 }

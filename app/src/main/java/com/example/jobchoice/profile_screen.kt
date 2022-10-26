@@ -43,13 +43,35 @@ class profile_screen : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val v : View = inflater!!.inflate(R.layout.activity_profile_screen,container,false)
-        getProfile()
 
         firstname_txt = v.findViewById(R.id.firstname_txt)
         lastname_txt = v.findViewById(R.id.lastname_txt)
         email_txt = v.findViewById(R.id.email_txt)
         password_txt = v.findViewById(R.id.password_txt)
         aboutme_txt = v.findViewById(R.id.aboutme_txt)
+
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://jobchoice-app.herokuapp.com/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        simpleAPI = retrofit.create(SimpleAPI::class.java)
+        val call = simpleAPI.profilepushGet("635965aebeb16c00161c5a67")
+        call.enqueue(object : Callback<ProfileGet> {
+            override fun onResponse(call: Call<ProfileGet>, response: Response<ProfileGet>) {
+                if(response.isSuccessful){
+                    System.out.println(response)
+                    firstname_txt.setText("Surachai")
+                    lastname_txt.setText("Santiphap")
+                    email_txt.setText("Surachai@email.com")
+                    password_txt.setText("123")
+                    aboutme_txt.setText("Male")
+                }else{
+                }
+            }
+
+            override fun onFailure(call: Call<ProfileGet>, t: Throwable) {
+            }
+        })
 
         val email = arguments?.getString("email")
 
@@ -72,26 +94,5 @@ class profile_screen : Fragment() {
     private fun DeleteAccount(){
         val showPopUp = accountdeletedPopUp_screen()
         showPopUp.show((activity as AppCompatActivity).supportFragmentManager,"showPopUp")
-    }
-
-    private fun getProfile(){
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://jobchoice-app.herokuapp.com/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        simpleAPI = retrofit.create(SimpleAPI::class.java)
-        val call = simpleAPI.profilepushGet()
-        call.enqueue(object : Callback<ProfileGet> {
-            override fun onResponse(call: Call<ProfileGet>, response: Response<ProfileGet>) {
-                if(response.isSuccessful){
-                    Toast.makeText(context, "Profile Screen.", Toast.LENGTH_LONG).show()
-                    System.out.println(response)
-                }else{
-                }
-            }
-
-            override fun onFailure(call: Call<ProfileGet>, t: Throwable) {
-            }
-        })
     }
 }

@@ -3,14 +3,19 @@ package com.example.jobchoice.api;
 public class EditProfilePut {
     private String firstname, lastname, email, password,aboutme;
 
-    public EditProfilePut(String firstname, String lastname, String email, String password,String aboutme){
+    public EditProfilePut(String aboutme, String email, String firstname, String lastname, String password){
+        this.aboutme = aboutme;
+        this.email = email;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.email = email;
         this.password = password;
-        this.aboutme = aboutme;
     }
 
+    public String getAboume(){
+        return aboutme;
+    }
+
+    public String getEmail(){ return email;}
 
     public String getFirstname(){
         return firstname;
@@ -20,16 +25,8 @@ public class EditProfilePut {
         return lastname;
     }
 
-    public String getEmail(){
-        return email;
-    }
-
     public String getPassword(){
         return password;
-    }
-
-    public String getContact(){
-        return aboutme;
     }
 
 }
