@@ -1,5 +1,9 @@
 package com.example.jobchoice.api;
 
+import android.app.SearchManager;
+
+import androidx.core.view.MenuItemCompat;
+
 public class WokerFindingSearchBox {
     private String user,JobTitle,requirement,Salary;
 

@@ -33,10 +33,12 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/7da0580ef936c439d553153f260a0f5a/transformed/material-1.6.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/f3a91354e725fb4008a61108f57125fe/transformed/jetified-library-2.1.4-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/c34b5607d961252a8b08dbbd08806a2a/transformed/appcompat-1.4.2-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/72f1852f9307f289f6f4816103ad812d/transformed/jetified-viewpager2-1.0.0-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/08a99761fa1f743c8aa59ca276e9b97d/transformed/recyclerview-1.2.1-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/94d30eac47eda22290707775644ddab9/transformed/cardview-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/f5fff72201d721f5982adcfd4ec72ac3/transformed/jetified-storage-1.4.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/fe6930d6e3831cf520a291cebd0c1a0c/transformed/monitor-1.4.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/38c59b9bd67ee3550a3528aeee91270f/transformed/jetified-play-services-maps-18.1.0-api.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/72f1852f9307f289f6f4816103ad812d/transformed/jetified-viewpager2-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/d9d1cee3d41378510adc7b811492545f/transformed/jetified-play-services-location-20.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/7d8ecce9b03853e5cbda10674c1e591c/transformed/jetified-play-services-base-18.0.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/a10cb1b60fb7276f1b02cada3b9ae036/transformed/jetified-play-services-tasks-18.0.1-api.jar</arg>
@@ -51,7 +53,6 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/57cb2fb6e093ff86bfd300d58ca87fa7/transformed/transition-1.2.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/1d3e90066430b649b57ce430b564d7af/transformed/vectordrawable-animated-1.1.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/3a8c44ec50993e40ebee7d87ce0d8965/transformed/vectordrawable-1.1.0-api.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/24bcd65f1db7bb8d8ea86d23981e7805/transformed/recyclerview-1.2.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/f1f9ff34c4aa13ba948df93f4e733450/transformed/viewpager-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/ab5f2f9c642430b881c1e66316c24eea/transformed/legacy-support-core-utils-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/0cb9e85e19c51f13a5d75ecd5d94ab4c/transformed/loader-1.0.0-api.jar</arg>
@@ -60,7 +61,6 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/1f23f6b35e673121c536686397e2ddee/transformed/cursoradapter-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/ae5f2493c08b943939f6d2dfd3b0a67a/transformed/jetified-lifecycle-viewmodel-savedstate-2.3.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/1c50e089305c0d21db00ccd80650a100/transformed/jetified-savedstate-1.1.0-api.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/94d30eac47eda22290707775644ddab9/transformed/cardview-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/ca64a69f56d4031e944f69798858c874/transformed/jetified-lifecycle-runtime-ktx-2.2.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/1f11280d3015a94ad321b3a152214453/transformed/lifecycle-runtime-2.3.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/4ffa7a9a0c4ffc2f89249d3c7b90727c/transformed/lifecycle-livedata-2.0.0-api.jar</arg>
@@ -247,7 +247,7 @@
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.documentfile:documentfile:1.0.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.print:print:1.0.0@aar" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: androidx.recyclerview:recyclerview:1.2.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: androidx.recyclerview:recyclerview:1.2.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.transition:transition:1.2.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.viewpager2:viewpager2:1.0.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: nl.joery.animatedbottombar:library:1.1.0@aar" level="project" />

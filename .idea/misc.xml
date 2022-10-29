@@ -98,21 +98,29 @@
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice/app/src/main/res/menu/button_menu.xml" value="0.1" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice/app/src/main/res/menu/menu.xml" value="0.3671875" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice/app/src/main/res/menu/search_menu.xml" value="0.30141085934159895" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/drawable/custom_search_view.xml" value="0.3015" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_fifth_recommend_screen.xml" value="0.3671875" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_job_finding_screen.xml" value="0.22" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_main.xml" value="0.11911231884057971" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_map_screen.xml" value="0.1" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_profile_edit_screen.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_profile_screen.xml" value="0.22" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_register_screen.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_search_more_screen.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_search_screen.xml" value="0.22" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_setting_screen.xml" value="0.3671875" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_worker_finding_screen.xml" value="0.22" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_accountdelected_pop_up_screen.xml" value="0.17857142857142858" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_accountdeleted_pop_up_screen.xml" value="0.19746376811594202" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_add_selected_pop_up_screen.xml" value="0.10144927536231885" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_add_selected_screen.xml" value="0.10144927536231885" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_addselected_pop_up_screen.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_search.xml" value="0.10461956521739131" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_support_pop_up_screen.xml" value="0.10144927536231885" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_theme_pop_up_screen.xml" value="0.10144927536231885" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/row_items.xml" value="0.3004273504273504" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/menu/menu.xml" value="0.3671875" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/menu/search_menu.xml" value="0.3671875" />
       </map>
     </option>
   </component>
