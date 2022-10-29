@@ -43,6 +43,10 @@ class WorkerFinding_screen : AppCompatActivity() {
         salary_edittxt = findViewById<View>(R.id.salary_edittxt) as EditText
         contact_edittxt = findViewById<View>(R.id.contact_edittxt) as EditText
 
+        val intent = getIntent()
+        val email = intent.getStringExtra("email")
+        val email_str = email.toString()
+
         uploadImage_btn.setOnClickListener(View.OnClickListener {
             uploadImage()
         })
@@ -96,7 +100,8 @@ class WorkerFinding_screen : AppCompatActivity() {
                 ).show()
                 return@OnClickListener
             }
-            Add(companyName_edittxt.text.toString(),
+            Add(email_str,
+                companyName_edittxt.text.toString(),
                 jobTitle_edittxt.text.toString(),
                 requirement_edittxt.text.toString(),
                 details_edittxt.text.toString(),
@@ -104,13 +109,13 @@ class WorkerFinding_screen : AppCompatActivity() {
                 contact_edittxt.text.toString())
         })
     }
-    private fun Add(companyName : String ,jobTitle : String, requirement : String,details : String ,salary : String ,contact : String ){
+    private fun Add(email : String ,companyName : String ,jobTitle : String, requirement : String,details : String ,salary : String ,contact : String ){
         val retrofit = Retrofit.Builder()
             .baseUrl("https://jobchoice-app.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         simpleAPI = retrofit.create(SimpleAPI::class.java)
-        val post = WorkerFindingPost(companyName,jobTitle,requirement,details,salary,contact)
+        val post = WorkerFindingPost(email,companyName,jobTitle,requirement,details,salary,contact)
         val call = simpleAPI.workerFindingpushPost(post)
         call.enqueue(object : Callback<WorkerFindingPost> {
             override fun onResponse(call: Call<WorkerFindingPost>, response: Response<WorkerFindingPost>) {

@@ -3,7 +3,6 @@ package com.example.jobchoice.api;
 public class ProfileGet {
     private String firstname, lastname, email, password,aboutme;
 
-
     public String getFirstname(){
         return firstname;
     }
@@ -32,7 +31,7 @@ public class ProfileGet {
         this.email = email;
     }
 
-    public void  setPassword(String password){
+    public void setPassword(String password){
         this.password = password;
     }
 

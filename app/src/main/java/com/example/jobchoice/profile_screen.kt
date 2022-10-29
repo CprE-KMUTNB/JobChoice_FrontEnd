@@ -29,7 +29,8 @@ class profile_screen : Fragment() {
     lateinit var password_txt: TextView
     lateinit var aboutme_txt: TextView
     lateinit var simpleAPI: SimpleAPI
-
+    lateinit var proflie : ProfileGet
+    var email : String? = ""
 
     var profileEdit_screen = profileEdit_screen()
 
@@ -44,6 +45,10 @@ class profile_screen : Fragment() {
         // Inflate the layout for this fragment
         val v : View = inflater!!.inflate(R.layout.activity_profile_screen,container,false)
 
+        val args = this.arguments
+        val email = args?.get("email")
+        val email_str = email.toString()
+
         firstname_txt = v.findViewById(R.id.firstname_txt)
         lastname_txt = v.findViewById(R.id.lastname_txt)
         email_txt = v.findViewById(R.id.email_txt)
@@ -55,17 +60,19 @@ class profile_screen : Fragment() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         simpleAPI = retrofit.create(SimpleAPI::class.java)
-        val call = simpleAPI.profilepushGet("635965aebeb16c00161c5a67")
+        val call = simpleAPI.profilepushGet(email_str)
         call.enqueue(object : Callback<ProfileGet> {
             override fun onResponse(call: Call<ProfileGet>, response: Response<ProfileGet>) {
                 if(response.isSuccessful){
-                    System.out.println(response)
-                    firstname_txt.setText("Surachai")
-                    lastname_txt.setText("Santiphap")
-                    email_txt.setText("Surachai@email.com")
-                    password_txt.setText("123")
-                    aboutme_txt.setText("Male")
+                    System.out.println(response.body())
+                    proflie = response.body()!!
+                    firstname_txt.setText(proflie.firstname)
+                    lastname_txt.setText(proflie.lastname)
+                    email_txt.setText(proflie.email)
+                    password_txt.setText(proflie.password)
+                    aboutme_txt.setText(proflie.aboutme)
                 }else{
+
                 }
             }
 
@@ -73,26 +80,27 @@ class profile_screen : Fragment() {
             }
         })
 
-        val email = arguments?.getString("email")
-
         Edit_btn = v.findViewById(R.id.Edit_btn)
         deleteAccount_btn = v.findViewById(R.id.deleteAccount_btn)
         Edit_btn.setOnClickListener{
-            EditProfile(email)
+            EditProfile(email_str)
         }
 
         deleteAccount_btn.setOnClickListener{
-            DeleteAccount()
+            DeleteAccount(email_str)
         }
         return v;
     }
-    private fun EditProfile(email : String?){
+    private fun EditProfile(email : String){
         val intent = Intent(this@profile_screen.requireContext(),profileEdit_screen::class.java)
         intent.putExtra("email",email)
         startActivity(intent)
     }
-    private fun DeleteAccount(){
+    private fun DeleteAccount(email: String){
         val showPopUp = accountdeletedPopUp_screen()
+        val bundle = Bundle()
+        bundle.putString("email",email)
+        showPopUp.arguments = bundle
         showPopUp.show((activity as AppCompatActivity).supportFragmentManager,"showPopUp")
     }
 }

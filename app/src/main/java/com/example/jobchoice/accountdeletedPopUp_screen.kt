@@ -31,13 +31,18 @@ class accountdeletedPopUp_screen : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_accountdeleted_pop_up_screen, container, false)
+        val v : View = inflater!!.inflate(R.layout.fragment_accountdeleted_pop_up_screen, container, false)
+        return  v
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val okay_btn = view.findViewById(R.id.okay_btn) as Button
         val deleteAccount_checkbox = view.findViewById(R.id.deleteAccount_checkbox) as CheckBox
+
+        val args = this.arguments
+        val email = args?.get("email")
+        val email_str = email.toString()
 
         okay_btn.setOnClickListener{
             val checkbox = deleteAccount_checkbox.isChecked
@@ -47,13 +52,13 @@ class accountdeletedPopUp_screen : DialogFragment() {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                 simpleAPI = retrofit.create(SimpleAPI::class.java)
-                val call = simpleAPI.userpushDelete("63581956bd05c85110bac5eb")
+                val call = simpleAPI.userpushDelete(email_str)
                 call.enqueue(object : Callback<Void> {
                     override fun onResponse(call: Call<Void>, response: Response<Void>) {
                         if (response.isSuccessful) {
                             Toast.makeText(context, "Your account has been deleted.", Toast.LENGTH_LONG).show()
                             System.out.println(response)
-                            val intent = Intent(this@accountdeletedPopUp_screen.requireContext(),MainActivity::class.java)
+                            val intent = Intent(context,MainActivity::class.java)
                             startActivity(intent)
                         } else {
                             Toast.makeText(context, "Delete Failed", Toast.LENGTH_LONG).show()

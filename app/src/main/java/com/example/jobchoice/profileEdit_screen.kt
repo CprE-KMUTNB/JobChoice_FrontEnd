@@ -29,6 +29,10 @@ class profileEdit_screen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_edit_screen)
+        
+        val intent = getIntent()
+        val email = intent.getStringExtra("email")
+        val email_str = email.toString()
 
         firstname_edittxt = findViewById<View>(R.id.firstname_edittxt) as EditText
         lastname_edittxt = findViewById(R.id.lastname_edittxt) as EditText
@@ -38,7 +42,8 @@ class profileEdit_screen : AppCompatActivity() {
 
         save_btn = findViewById(R.id.save_btn)
         save_btn.setOnClickListener(View.OnClickListener {
-            Save(firstname_edittxt.getText().toString(),
+            Save(email_str,
+                firstname_edittxt.getText().toString(),
                 lastname_edittxt.getText().toString(),
                 email_edittxt.getText().toString(),
                 password_edittxt.getText().toString(),
@@ -48,19 +53,20 @@ class profileEdit_screen : AppCompatActivity() {
         })
     }
 
-    private fun Save(firstname: String,lastname: String,email: String,password: String,aboutme: String) {
+    private fun Save(myemail : String, firstname: String,lastname: String,email: String,password: String,aboutme: String) {
         val retrofit = Retrofit.Builder()
             .baseUrl("https://jobchoice-app.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         simpleAPI = retrofit.create(SimpleAPI::class.java)
         val post = EditProfilePut(aboutme,email,firstname, lastname, password)
-        val call = simpleAPI.editprofilepushPut("63584d59066d890016d10a5e", post)
+        val call = simpleAPI.editprofilepushPut(myemail, post)
         call.enqueue(object : Callback<EditProfilePut> {
             override fun onResponse(call: Call<EditProfilePut>?, response: Response<EditProfilePut>) {
                 if (response.isSuccessful) {
                     Toast.makeText(this@profileEdit_screen, "SAVED", Toast.LENGTH_SHORT).show()
                     intent = Intent(this@profileEdit_screen,AfterLogin::class.java)
+                    intent.putExtra("email",email)
                     startActivity(intent)
                 } else {
                     Toast.makeText(this@profileEdit_screen, "SAVED FAIL", Toast.LENGTH_SHORT).show()

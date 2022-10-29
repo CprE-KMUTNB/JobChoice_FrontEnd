@@ -1,9 +1,9 @@
 package com.example.jobchoice.api;
 
 public class JobFindingPost {
-    private String user,JobTitle,ability,details,SalaryNeed,contact;
+    private String email,user,JobTitle,ability,details,SalaryNeed,contact;
 
-    public JobFindingPost(String user, String JobTitle, String ability, String details, String SalaryNeed,String contact){
+    public JobFindingPost(String email, String user, String JobTitle, String ability, String details, String SalaryNeed,String contact){
         this.user = user;
         this.JobTitle = JobTitle;
         this.ability = ability;
@@ -11,6 +11,8 @@ public class JobFindingPost {
         this.SalaryNeed = SalaryNeed;
         this.contact = contact;
     }
+
+    public String getEmail(){ return email;}
 
     public String getFullname(){ return user;}
 

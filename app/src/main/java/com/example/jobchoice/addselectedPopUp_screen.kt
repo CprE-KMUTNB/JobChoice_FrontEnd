@@ -36,6 +36,10 @@ class addselectedPopUp_screen : DialogFragment() {
         val jobFinding_checkbox = view.findViewById(R.id.jobFinding_checkbox) as CheckBox
         val workerFinding_checkbox = view.findViewById(R.id.workerFinding_checkbox) as CheckBox
 
+        val args = this.arguments
+        val email = args?.get("email")
+        val email_str = email.toString()
+
         okay_btn.setOnClickListener{
             val checkbox1 = jobFinding_checkbox.isChecked
             val checkbox2 = workerFinding_checkbox.isChecked
@@ -44,10 +48,12 @@ class addselectedPopUp_screen : DialogFragment() {
             }else if(checkbox1){
                 Toast.makeText(context, "Select Job Finding", Toast.LENGTH_LONG).show()
                 val intent = Intent(context,JobFinding_screen::class.java)
+                intent.putExtra("email",email_str)
                 startActivity(intent)
             }else if(checkbox2){
                 Toast.makeText(context, "Select Worker Finding", Toast.LENGTH_LONG).show()
                 val intent = Intent(context,WorkerFinding_screen::class.java)
+                intent.putExtra("email",email_str)
                 startActivity(intent)
             }else{
                 Toast.makeText(context, "Check box cannot be null", Toast.LENGTH_LONG).show()

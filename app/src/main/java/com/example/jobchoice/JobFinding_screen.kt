@@ -42,6 +42,10 @@ class JobFinding_screen : AppCompatActivity() {
         salaryNeeded_edittxt = findViewById<View>(R.id.salaryNeeded_edittxt) as EditText
         contact_edittxt = findViewById<View>(R.id.contact_edittxt) as EditText
 
+        val intent = getIntent()
+        val email = intent.getStringExtra("email")
+        val email_str = email.toString()
+
         add_btn.setOnClickListener(View.OnClickListener {
             if (TextUtils.isEmpty(fullname_edittxt.text.toString())) {
                 Toast.makeText(
@@ -91,7 +95,8 @@ class JobFinding_screen : AppCompatActivity() {
                 ).show()
                 return@OnClickListener
             }
-            Add(fullname_edittxt.text.toString(),
+            Add(email_str,
+                fullname_edittxt.text.toString(),
                 jobTitle_edittxt.text.toString(),
                 ability_edittxt.text.toString(),
                 education_edittxt.text.toString(),
@@ -99,13 +104,13 @@ class JobFinding_screen : AppCompatActivity() {
                 contact_edittxt.text.toString())
         })
     }
-    private fun Add(fullname : String, jobTitle : String , ability : String, education : String, salaryNeeded : String, contact : String){
+    private fun Add(email : String,fullname : String, jobTitle : String , ability : String, education : String, salaryNeeded : String, contact : String){
         val retrofit = Retrofit.Builder()
             .baseUrl("https://jobchoice-app.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         simpleAPI = retrofit.create(SimpleAPI::class.java)
-        val post = JobFindingPost(fullname,jobTitle,ability,education,salaryNeeded,contact)
+        val post = JobFindingPost(email,fullname,jobTitle,ability,education,salaryNeeded,contact)
         val call = simpleAPI.jobFindingpushPost(post)
         call.enqueue(object : Callback<JobFindingPost> {
             override fun onResponse(call: Call<JobFindingPost>, response: Response<JobFindingPost>) {

@@ -3,6 +3,7 @@ package com.example.jobchoice
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -68,6 +69,7 @@ class MainActivity() : AppCompatActivity() {
                     System.out.println(response)
                     Toast.makeText(this@MainActivity, "Login.", Toast.LENGTH_LONG).show()
                     intent = Intent(this@MainActivity,AfterLogin::class.java)
+                    intent.putExtra("email",email)
                     startActivity(intent)
                 }else{
                     if(response.code() == 404){

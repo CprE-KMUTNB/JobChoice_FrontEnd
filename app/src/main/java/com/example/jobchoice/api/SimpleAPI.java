@@ -29,6 +29,9 @@ public interface SimpleAPI {
     @GET("user/get/{id}")
     Call<ProfileGet> profilepushGet(@Path("id") String id);
 
+    @GET("user/get/workerfinding")
+    Call<WokerFindingSearchBox> workerfindingsearchGet();
+
     @DELETE("user/delete/{id}")
     Call<Void> userpushDelete(@Path("id") String id);
 
