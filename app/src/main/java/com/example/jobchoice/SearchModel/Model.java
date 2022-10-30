@@ -1,5 +1,7 @@
 package com.example.jobchoice.SearchModel;
 
+import java.util.Comparator;
+
 public class Model {
     private String companyName, jobTitle, requirement,salary;
 
@@ -36,5 +38,20 @@ public class Model {
     public void setSalary(String salary){
         this.salary = salary;
     }
+
+    public static final Comparator<Model> By_TITLE_ASCENDING = new Comparator<Model>() {
+        @Override
+        public int compare(Model model1, Model model2) {
+            return model1.getCompanyName().compareTo(model2.getCompanyName());
+        }
+    };
+
+    public static final Comparator<Model> By_TITLE_DESCENDING = new Comparator<Model>() {
+        @Override
+        public int compare(Model model1, Model model2) {
+            return model2.getCompanyName().compareTo(model1.getCompanyName());
+        }
+    };
+
 
 }
