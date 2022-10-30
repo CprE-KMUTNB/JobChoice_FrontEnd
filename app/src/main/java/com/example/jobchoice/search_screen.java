@@ -1,6 +1,7 @@
 package com.example.jobchoice;
 
 import android.app.AlertDialog;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -19,19 +20,30 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.SearchView;
 
 import com.example.jobchoice.SearchModel.Model;
 import com.example.jobchoice.SearchModel.MyAdapter;
+import com.example.jobchoice.api.SimpleAPI;
+import com.example.jobchoice.api.WokerFindingSearchBox;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Objects;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class search_screen extends Fragment {
     RecyclerView recyclerView;
     MyAdapter myAdapter;
     SharedPreferences preferences;
+    SimpleAPI simpleAPI;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,9 +56,26 @@ public class search_screen extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.activity_search_screen, container, false);
+
+        Bundle args = this.getArguments();
+        Object email = args.get("email");
+        String email_str = email.toString();
+
         recyclerView = v.findViewById(R.id.recycleView);
         preferences = getContext().getSharedPreferences("My_Pref", Context.MODE_PRIVATE);
         getMyList();
+
+        Button add_btn = v.findViewById(R.id.add_btn);
+        add_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addselectedPopUp_screen showPopUp = new addselectedPopUp_screen();
+                Bundle bundle = new Bundle();
+                bundle.putString("email",email_str);
+                showPopUp.setArguments(bundle);
+                showPopUp.show(getActivity().getSupportFragmentManager(), "showPopUp");
+            }
+        });
         return v;
     }
 
@@ -87,7 +116,6 @@ public class search_screen extends Fragment {
 
         builder.setTitle("Sort by");
         builder.setIcon(R.drawable.ic_baseline_sort_24);
-
         builder.setItems(options, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -110,6 +138,27 @@ public class search_screen extends Fragment {
     }
 
     private void getMyList(){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://jobchoice-app.herokuapp.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        simpleAPI = retrofit.create(SimpleAPI.class);
+        Call<WokerFindingSearchBox> call = simpleAPI.workerfindingsearchGet();
+        call.enqueue(new Callback<WokerFindingSearchBox>() {
+            @Override
+            public void onResponse(Call<WokerFindingSearchBox> call, Response<WokerFindingSearchBox> response) {
+                if(response.isSuccessful()){
+                    System.out.println(response.body());
+                }else{
+
+                }
+            }
+            @Override
+            public void onFailure(Call<WokerFindingSearchBox> call, Throwable t) {
+
+            }
+        });
+
         ArrayList<Model> models = new ArrayList<>();
         Model model = new Model();
         model.setCompanyName("BTS Company");
