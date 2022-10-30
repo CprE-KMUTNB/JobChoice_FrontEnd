@@ -1,29 +1,27 @@
 package com.example.jobchoice;
 
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuItemCompat;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SearchView;
 
 import com.example.jobchoice.SearchModel.Model;
 import com.example.jobchoice.SearchModel.MyAdapter;
+import com.example.jobchoice.UserPost.UserAdapter;
+import com.example.jobchoice.UserPost.UserPostModel;
 import com.example.jobchoice.api.SimpleAPI;
 import com.example.jobchoice.api.WokerFindingSearchBox;
 
@@ -36,75 +34,42 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-
-public class search_screen extends Fragment {
+public class user_all_post_screen extends AppCompatActivity {
     RecyclerView recyclerView;
-    MyAdapter myAdapter;
+    UserAdapter userAdapter;
     SharedPreferences preferences;
     SimpleAPI simpleAPI;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
-    }
+        setContentView(R.layout.activity_user_all_post_screen);
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.activity_search_screen, container, false);
-
-        Bundle args = this.getArguments();
-        Object email = args.get("email");
-        String email_str = email.toString();
-
-        recyclerView = v.findViewById(R.id.recycleView);
-        preferences = getContext().getSharedPreferences("My_Pref", Context.MODE_PRIVATE);
+        recyclerView = findViewById(R.id.recycleView);
+        preferences = this.getSharedPreferences("My_Pref", Context.MODE_PRIVATE);
         getMyList();
-
-        Button add_btn = v.findViewById(R.id.add_btn);
-        add_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addselectedPopUp_screen showPopUp = new addselectedPopUp_screen();
-                Bundle bundle = new Bundle();
-                bundle.putString("email",email_str);
-                showPopUp.setArguments(bundle);
-                showPopUp.show(getActivity().getSupportFragmentManager(), "showPopUp");
-            }
-        });
-
-        Button yourpost_btn = v.findViewById(R.id.yourpost_btn);
-        yourpost_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(),user_all_post_screen.class);
-                startActivity(intent);
-            }
-        });
-        return v;
     }
 
-
     @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater.inflate(R.menu.search_menu, menu);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.search_menu,menu);
         MenuItem menuItem = menu.findItem(R.id.search);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                myAdapter.getFilter().filter(query);
+                userAdapter.getFilter().filter(query);
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                myAdapter.getFilter().filter(newText);
+                userAdapter.getFilter().filter(newText);
                 return false;
             }
         });
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -119,7 +84,7 @@ public class search_screen extends Fragment {
 
     private void sortDailog(){
         String[] options = {"Ascending","Descending"};
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext(),R.style.MyDialogTheme);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.MyDialogTheme);
 
         builder.setTitle("Sort by");
         builder.setIcon(R.drawable.ic_baseline_sort_24);
@@ -166,22 +131,22 @@ public class search_screen extends Fragment {
             }
         });
 
-        ArrayList<Model> models = new ArrayList<>();
-        Model model = new Model();
+        ArrayList<UserPostModel> models = new ArrayList<>();
+        UserPostModel model = new UserPostModel();
         model.setCompanyName("BTS Company");
         model.setJobTitle("Programmer");
         model.setRequirement("Male");
         model.setSalary("30,000");
         models.add(model);
-        
-        model = new Model();
+
+        model = new UserPostModel();
         model.setCompanyName("Google");
         model.setJobTitle("Cleaning Staff");
         model.setRequirement("Male");
         model.setSalary("8,000");
         models.add(model);
 
-        model = new Model();
+        model = new UserPostModel();
         model.setCompanyName("True");
         model.setJobTitle("Security Guard");
         model.setRequirement("Male");
@@ -190,14 +155,14 @@ public class search_screen extends Fragment {
 
         String SortSetting = preferences.getString("Sort","Ascending");
         if(SortSetting.equals("Ascending")){
-            Collections.sort(models,Model.By_TITLE_ASCENDING);
+            Collections.sort(models,UserPostModel.By_TITLE_ASCENDING);
         }
         else if(SortSetting.equals("Descending")){
-            Collections.sort(models,Model.By_TITLE_DESCENDING);
+            Collections.sort(models,UserPostModel.By_TITLE_DESCENDING);
         }
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        myAdapter = new MyAdapter(getContext(),models);
-        recyclerView.setAdapter(myAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        userAdapter = new UserAdapter(this,models);
+        recyclerView.setAdapter(userAdapter);
     }
 }

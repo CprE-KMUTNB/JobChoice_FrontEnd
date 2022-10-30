@@ -21,6 +21,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".user_post_screen"
+            android:exported="false" />
+        <activity
+            android:name=".user_all_post_screen"
+            android:exported="false" />
+        <activity
             android:name=".search_more_screen"
             android:exported="false" />
         <activity

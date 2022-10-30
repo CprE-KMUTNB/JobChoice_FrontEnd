@@ -110,12 +110,17 @@
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_search_more_screen.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_search_screen.xml" value="0.22" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_setting_screen.xml" value="0.3671875" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_user_all_post.xml" value="0.42883211678832117" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_user_all_post_screen.xml" value="0.3671875" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_user_post_screen.xml" value="0.353125" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_worker_finding_screen.xml" value="0.22" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_accountdelected_pop_up_screen.xml" value="0.17857142857142858" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_accountdeleted_pop_up_screen.xml" value="0.19746376811594202" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_add_selected_pop_up_screen.xml" value="0.10144927536231885" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_add_selected_screen.xml" value="0.10144927536231885" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_addselected_pop_up_screen.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_deletepost_pop_up_screen.xml" value="0.1717325227963526" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_postdeleted_pop_up_screen.xml" value="0.353125" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_search.xml" value="0.10461956521739131" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_support_pop_up_screen.xml" value="0.10144927536231885" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_theme_pop_up_screen.xml" value="0.10144927536231885" />
