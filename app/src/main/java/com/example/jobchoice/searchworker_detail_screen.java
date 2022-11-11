@@ -8,13 +8,13 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class search_more_screen extends AppCompatActivity {
+public class searchworker_detail_screen extends AppCompatActivity {
     TextView companyName_txtView, jobTitle_txtView, requirement_txtView, salary_txtView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_more_screen);
+        setContentView(R.layout.activity_searchworker_detail_screen);
 
         ActionBar actionBar = getSupportActionBar();
 

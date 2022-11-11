@@ -122,6 +122,7 @@ class WorkerFinding_screen : AppCompatActivity() {
                 if(response.isSuccessful){
                     Toast.makeText(this@WorkerFinding_screen, "Add success", Toast.LENGTH_LONG).show()
                     intent = Intent(this@WorkerFinding_screen,AfterLogin::class.java)
+                    intent.putExtra("email",email)
                     startActivity(intent)
                 }else{
                     Toast.makeText(this@WorkerFinding_screen, "Cannot add", Toast.LENGTH_LONG).show()

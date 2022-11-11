@@ -1,21 +1,20 @@
 package com.example.jobchoice.api;
 
-import android.app.SearchManager;
-
-import androidx.core.view.MenuItemCompat;
-
 public class WokerFindingSearchBox {
-    private String user,JobTitle,requirement,Salary;
+    private String user,JobTitle,requirement,details,Salary,contact;
 
-    public WokerFindingSearchBox(String user, String JobTitle, String requirement, String Salary){
+    public WokerFindingSearchBox(String user, String JobTitle, String requirement, String details, String Salary,String contact){
         this.user = user;
         this.JobTitle = JobTitle;
         this.requirement = requirement;
+        this.details = details;
         this.Salary = Salary;
+        this.contact = contact;
     }
 
-
-    public String getFullname(){ return user; }
+    public String getUser(){
+        return user;
+    }
 
     public String getJobTitle(){
         return JobTitle;
@@ -25,8 +24,16 @@ public class WokerFindingSearchBox {
         return requirement;
     }
 
+    public String getDetails(){
+        return details;
+    }
+
     public String getSalary(){
         return Salary;
+    }
+
+    public String getContact(){
+        return contact;
     }
 
 }

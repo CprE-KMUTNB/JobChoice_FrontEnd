@@ -22,13 +22,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SearchView;
 
-import com.example.jobchoice.SearchModel.Model;
-import com.example.jobchoice.SearchModel.MyAdapter;
+import com.example.jobchoice.SearchModel.Job.Model_job;
+import com.example.jobchoice.SearchModel.Job.MyAdapter_job;
+import com.example.jobchoice.api.GetPostCount;
+import com.example.jobchoice.api.JobFindingSearchBox;
 import com.example.jobchoice.api.SimpleAPI;
-import com.example.jobchoice.api.WokerFindingSearchBox;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -37,11 +39,14 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class search_screen extends Fragment {
+public class searchjob_screen extends Fragment {
     RecyclerView recyclerView;
-    MyAdapter myAdapter;
+    MyAdapter_job myAdapter_job;
     SharedPreferences preferences;
     SimpleAPI simpleAPI;
+    List<JobFindingSearchBox> jobFindingSearchBoxList;
+    GetPostCount getPostCase;
+    private int count;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,7 +58,7 @@ public class search_screen extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.activity_search_screen, container, false);
+        View v = inflater.inflate(R.layout.activity_searchjob_screen, container, false);
 
         Bundle args = this.getArguments();
         Object email = args.get("email");
@@ -86,22 +91,23 @@ public class search_screen extends Fragment {
         return v;
     }
 
-
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater.inflate(R.menu.search_menu, menu);
+        inflater.inflate(R.menu.search_job_menu, menu);
         MenuItem menuItem = menu.findItem(R.id.search);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                myAdapter.getFilter().filter(query);
+                myAdapter_job.getFilter().filter(query);
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                myAdapter.getFilter().filter(newText);
+                if (myAdapter_job != null){
+                    myAdapter_job.getFilter().filter(newText);
+                }
                 return false;
             }
         });
@@ -150,54 +156,64 @@ public class search_screen extends Fragment {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         simpleAPI = retrofit.create(SimpleAPI.class);
-        Call<WokerFindingSearchBox> call = simpleAPI.workerfindingsearchGet();
-        call.enqueue(new Callback<WokerFindingSearchBox>() {
+        Call<GetPostCount> call1 = simpleAPI.jobfindingpostcountGet();
+        call1.enqueue(new Callback<GetPostCount>() {
             @Override
-            public void onResponse(Call<WokerFindingSearchBox> call, Response<WokerFindingSearchBox> response) {
+            public void onResponse(Call<GetPostCount> call, Response<GetPostCount> response) {
                 if(response.isSuccessful()){
-                    System.out.println(response.body());
-                }else{
-
+                    getPostCase = response.body();
+                    count = Integer.parseInt(getPostCase.getCount());
+                    System.out.println("Get count");
+                    Call<List<JobFindingSearchBox>> call2 = simpleAPI.jobfindingsearchGet();
+                    call2.enqueue(new Callback<List<JobFindingSearchBox>>() {
+                        @Override
+                        public void onResponse(Call<List<JobFindingSearchBox>> call, Response<List<JobFindingSearchBox>> response) {
+                            if(response.isSuccessful()){
+                                System.out.println("Get data");
+                                jobFindingSearchBoxList = response.body();
+                                SearchPost();
+                            }else{
+                                System.out.println("Cannot get data");
+                            }
+                        }
+                        @Override
+                        public void onFailure(Call<List<JobFindingSearchBox>> call, Throwable t) {
+                            System.out.println("Cannot get data : " + t.getCause());
+                        }
+                    });
                 }
             }
             @Override
-            public void onFailure(Call<WokerFindingSearchBox> call, Throwable t) {
-
+            public void onFailure(Call<GetPostCount> call, Throwable t) {
+                System.out.println("Cannot get count : " + t.getCause());
             }
         });
 
-        ArrayList<Model> models = new ArrayList<>();
-        Model model = new Model();
-        model.setCompanyName("BTS Company");
-        model.setJobTitle("Programmer");
-        model.setRequirement("Male");
-        model.setSalary("30,000");
-        models.add(model);
-        
-        model = new Model();
-        model.setCompanyName("Google");
-        model.setJobTitle("Cleaning Staff");
-        model.setRequirement("Male");
-        model.setSalary("8,000");
-        models.add(model);
+    }
 
-        model = new Model();
-        model.setCompanyName("True");
-        model.setJobTitle("Security Guard");
-        model.setRequirement("Male");
-        model.setSalary("8,000");
-        models.add(model);
+    public void SearchPost(){
+        ArrayList<Model_job> model_jobs = new ArrayList<>();
+
+        for(int i = 0 ; i <= count - 1 ; i++){
+            System.out.println(jobFindingSearchBoxList.get(i));
+            Model_job model_job = new Model_job();
+            model_job.setFullname(jobFindingSearchBoxList.get(i).getFullname());
+            model_job.setJobTitle(jobFindingSearchBoxList.get(i).getJobTitle());
+            model_job.setDetails(jobFindingSearchBoxList.get(i).getEducation());
+            model_job.setAbility(jobFindingSearchBoxList.get(i).getAbility());
+            model_jobs.add(model_job);
+        }
 
         String SortSetting = preferences.getString("Sort","Ascending");
         if(SortSetting.equals("Ascending")){
-            Collections.sort(models,Model.By_TITLE_ASCENDING);
+            Collections.sort(model_jobs,Model_job.By_TITLE_ASCENDING);
         }
         else if(SortSetting.equals("Descending")){
-            Collections.sort(models,Model.By_TITLE_DESCENDING);
+            Collections.sort(model_jobs,Model_job.By_TITLE_DESCENDING);
         }
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        myAdapter = new MyAdapter(getContext(),models);
-        recyclerView.setAdapter(myAdapter);
+        myAdapter_job= new MyAdapter_job(getContext(),model_jobs);
+        recyclerView.setAdapter(myAdapter_job);
     }
 }

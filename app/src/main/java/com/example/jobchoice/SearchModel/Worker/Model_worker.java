@@ -1,8 +1,8 @@
-package com.example.jobchoice.SearchModel;
+package com.example.jobchoice.SearchModel.Worker;
 
 import java.util.Comparator;
 
-public class Model {
+public class Model_worker {
     private String companyName, jobTitle, requirement,salary;
 
     public String getCompanyName(){
@@ -39,17 +39,17 @@ public class Model {
         this.salary = salary;
     }
 
-    public static final Comparator<Model> By_TITLE_ASCENDING = new Comparator<Model>() {
+    public static final Comparator<Model_worker> By_TITLE_ASCENDING = new Comparator<Model_worker>() {
         @Override
-        public int compare(Model model1, Model model2) {
-            return model1.getCompanyName().compareTo(model2.getCompanyName());
+        public int compare(Model_worker model_worker1, Model_worker model_worker2) {
+            return model_worker1.getCompanyName().compareTo(model_worker2.getCompanyName());
         }
     };
 
-    public static final Comparator<Model> By_TITLE_DESCENDING = new Comparator<Model>() {
+    public static final Comparator<Model_worker> By_TITLE_DESCENDING = new Comparator<Model_worker>() {
         @Override
-        public int compare(Model model1, Model model2) {
-            return model2.getCompanyName().compareTo(model1.getCompanyName());
+        public int compare(Model_worker model_worker1, Model_worker model_worker2) {
+            return model_worker1.getCompanyName().compareTo(model_worker2.getCompanyName());
         }
     };
 

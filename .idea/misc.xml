@@ -99,16 +99,21 @@
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice/app/src/main/res/menu/menu.xml" value="0.3671875" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice/app/src/main/res/menu/search_menu.xml" value="0.30141085934159895" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/drawable/custom_search_view.xml" value="0.3015" />
-        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_afterlogin.xml" value="0.22" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_afterlogin.xml" value="0.5" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_fifth_recommend_screen.xml" value="0.3671875" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_job_finding_screen.xml" value="0.22" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_job_row_items.xml" value="0.29438405797101447" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_map_screen.xml" value="0.1" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_profile_edit_screen.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_profile_screen.xml" value="0.22" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_register_screen.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_search_more_screen.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_search_more_screen.xml" value="0.1" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_search_screen.xml" value="0.22" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_searchjob_detail_screen.xml" value="0.29438405797101447" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_searchjob_screen.xml" value="0.29438405797101447" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_searchworker_detail_screen.xml" value="0.29438405797101447" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_searchworker_screen.xml" value="0.29438405797101447" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_setting_screen.xml" value="0.3671875" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_user_all_post.xml" value="0.42883211678832117" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/activity_user_all_post_screen.xml" value="0.3671875" />
@@ -122,12 +127,18 @@
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_deletepost_pop_up_screen.xml" value="0.1717325227963526" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_postdeleted_pop_up_screen.xml" value="0.353125" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_search.xml" value="0.10461956521739131" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_searchpost_pop_up_screen.xml" value="0.29438405797101447" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_support_pop_up_screen.xml" value="0.10144927536231885" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/fragment_theme_pop_up_screen.xml" value="0.10144927536231885" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/job_row_items.xml" value="0.29438405797101447" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/row_items.xml" value="0.3004273504273504" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/searchworker_detail_screen.xml" value="0.29438405797101447" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/toolbar.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/layout/worker_row_items.xml" value="0.29438405797101447" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/menu/menu.xml" value="0.3671875" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/menu/search_job_menu.xml" value="0.3671875" />
         <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/menu/search_menu.xml" value="0.3671875" />
+        <entry key="..\:/Users/Surachai/AndroidStudioProjects/JobChoice_FrontEnd/app/src/main/res/menu/search_worker_menu.xml" value="0.3671875" />
       </map>
     </option>
   </component>

@@ -114,10 +114,11 @@ class JobFinding_screen : AppCompatActivity() {
         val call = simpleAPI.jobFindingpushPost(post)
         call.enqueue(object : Callback<JobFindingPost> {
             override fun onResponse(call: Call<JobFindingPost>, response: Response<JobFindingPost>) {
+                System.out.println(response)
                 if(response.isSuccessful){
-                    System.out.println(response)
                     Toast.makeText(this@JobFinding_screen, "Add success", Toast.LENGTH_LONG).show()
                     intent = Intent(this@JobFinding_screen,AfterLogin::class.java)
+                    intent.putExtra("email",email)
                     startActivity(intent)
                 }else{
                     Toast.makeText(this@JobFinding_screen, "Cannot add", Toast.LENGTH_LONG).show()

@@ -14,26 +14,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.SearchView;
 
-import com.example.jobchoice.SearchModel.Model;
-import com.example.jobchoice.SearchModel.MyAdapter;
 import com.example.jobchoice.UserPost.UserAdapter;
 import com.example.jobchoice.UserPost.UserPostModel;
 import com.example.jobchoice.api.SimpleAPI;
-import com.example.jobchoice.api.WokerFindingSearchBox;
 
 import java.util.ArrayList;
 import java.util.Collections;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
 public class user_all_post_screen extends AppCompatActivity {
     RecyclerView recyclerView;
     UserAdapter userAdapter;
@@ -53,7 +41,7 @@ public class user_all_post_screen extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.search_menu,menu);
+        menuInflater.inflate(R.menu.search_worker_menu,menu);
         MenuItem menuItem = menu.findItem(R.id.search);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -110,47 +98,12 @@ public class user_all_post_screen extends AppCompatActivity {
     }
 
     private void getMyList(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://jobchoice-app.herokuapp.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        simpleAPI = retrofit.create(SimpleAPI.class);
-        Call<WokerFindingSearchBox> call = simpleAPI.workerfindingsearchGet();
-        call.enqueue(new Callback<WokerFindingSearchBox>() {
-            @Override
-            public void onResponse(Call<WokerFindingSearchBox> call, Response<WokerFindingSearchBox> response) {
-                if(response.isSuccessful()){
-                    System.out.println(response.body());
-                }else{
-
-                }
-            }
-            @Override
-            public void onFailure(Call<WokerFindingSearchBox> call, Throwable t) {
-
-            }
-        });
-
         ArrayList<UserPostModel> models = new ArrayList<>();
         UserPostModel model = new UserPostModel();
-        model.setCompanyName("BTS Company");
-        model.setJobTitle("Programmer");
-        model.setRequirement("Male");
-        model.setSalary("30,000");
-        models.add(model);
-
-        model = new UserPostModel();
-        model.setCompanyName("Google");
-        model.setJobTitle("Cleaning Staff");
-        model.setRequirement("Male");
-        model.setSalary("8,000");
-        models.add(model);
-
-        model = new UserPostModel();
-        model.setCompanyName("True");
-        model.setJobTitle("Security Guard");
-        model.setRequirement("Male");
-        model.setSalary("8,000");
+        model.setCompanyName("True Corporation Co., Ltd.");
+        model.setJobTitle("Technician");
+        model.setRequirement("Bachelor's Degree");
+        model.setSalary("25,000 Baht");
         models.add(model);
 
         String SortSetting = preferences.getString("Sort","Ascending");

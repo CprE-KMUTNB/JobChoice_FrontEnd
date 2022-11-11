@@ -31,8 +31,11 @@ class AfterLogin : AppCompatActivity() {
                     R.id.profile -> {
                         fragment = profile_screen()
                     }
-                    R.id.search -> {
-                        fragment = search_screen()
+                    R.id.searchworker -> {
+                        fragment = searchworker_screen()
+                    }
+                    R.id.searchjob -> {
+                        fragment = searchjob_screen()
                     }
                     R.id.map -> {
                         fragment = map_screen()

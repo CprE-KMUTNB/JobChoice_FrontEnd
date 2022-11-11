@@ -11,7 +11,6 @@ import android.widget.Filterable;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.jobchoice.R;
-import com.example.jobchoice.SearchModel.CustomFilter;
 import com.example.jobchoice.user_post_screen;
 import java.util.ArrayList;
 
@@ -29,7 +28,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserHolder> implements Fil
     @NonNull
     @Override
     public UserHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_items,null);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.worker_row_items,null);
         return new UserHolder(view);
     }
 

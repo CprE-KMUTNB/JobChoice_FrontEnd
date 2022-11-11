@@ -1,10 +1,9 @@
 package com.example.jobchoice.api;
 
-public class JobFindingPost {
-    private String email,user,JobTitle,ability,details,SalaryNeed,contact;
+public class JobFindingSearchBox {
+    private String user,JobTitle,ability,details,SalaryNeed,contact;
 
-    public JobFindingPost(String email, String user, String JobTitle, String ability, String details, String SalaryNeed,String contact){
-        this.email = email;
+    public JobFindingSearchBox(String email, String user, String JobTitle, String ability, String details, String SalaryNeed,String contact){
         this.user = user;
         this.JobTitle = JobTitle;
         this.ability = ability;
@@ -13,7 +12,6 @@ public class JobFindingPost {
         this.contact = contact;
     }
 
-    public String getEmail(){ return email;}
 
     public String getFullname(){ return user;}
 
@@ -36,5 +34,4 @@ public class JobFindingPost {
     public String getContact(){
         return contact;
     }
-
 }

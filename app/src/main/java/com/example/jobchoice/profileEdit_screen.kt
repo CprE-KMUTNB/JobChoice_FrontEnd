@@ -62,14 +62,18 @@ class profileEdit_screen : AppCompatActivity() {
         val post = EditProfilePut(aboutme,email,firstname, lastname, password)
         val call = simpleAPI.editprofilepushPut(myemail, post)
         call.enqueue(object : Callback<EditProfilePut> {
-            override fun onResponse(call: Call<EditProfilePut>?, response: Response<EditProfilePut>) {
+            override fun onResponse(call: Call<EditProfilePut>, response: Response<EditProfilePut>) {
                 if (response.isSuccessful) {
                     Toast.makeText(this@profileEdit_screen, "SAVED", Toast.LENGTH_SHORT).show()
                     intent = Intent(this@profileEdit_screen,AfterLogin::class.java)
                     intent.putExtra("email",email)
                     startActivity(intent)
                 } else {
-                    Toast.makeText(this@profileEdit_screen, "SAVED FAIL", Toast.LENGTH_SHORT).show()
+                    if(response.code() == 404){
+                        Toast.makeText(this@profileEdit_screen, "Email already used", Toast.LENGTH_SHORT).show()
+                    }else{
+                        Toast.makeText(this@profileEdit_screen, "SAVED FAIL", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
             override fun onFailure(call: Call<EditProfilePut>?, t: Throwable) {}
