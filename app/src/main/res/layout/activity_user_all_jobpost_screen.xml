@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFECD0"
+    tools:context=".user_all_jobpost_screen">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFECD0"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:text="YOUR POST"
+        android:textColor="@color/black"
+        android:textSize="27sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/alert_txtview"
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:background="#FFECD0"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/veryred"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </ScrollView>
+
+</LinearLayout>

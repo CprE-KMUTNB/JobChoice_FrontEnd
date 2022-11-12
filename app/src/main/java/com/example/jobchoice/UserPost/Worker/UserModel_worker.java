@@ -1,8 +1,17 @@
-package com.example.jobchoice.UserPost;
+
+package com.example.jobchoice.UserPost.Worker;
 import java.util.Comparator;
 
-public class UserPostModel {
-    private String companyName, jobTitle, requirement,salary;
+public class UserModel_worker {
+    private String email,companyName, jobTitle, requirement,salary;
+
+    public String getEmail(){
+        return email;
+    }
+
+    public void setEmail(String email){
+        this.email = email;
+    }
 
     public String getCompanyName(){
         return companyName;
@@ -38,16 +47,16 @@ public class UserPostModel {
         this.salary = salary;
     }
 
-    public static final Comparator<UserPostModel> By_TITLE_ASCENDING = new Comparator<UserPostModel>() {
+    public static final Comparator<UserModel_worker> By_TITLE_ASCENDING = new Comparator<UserModel_worker>() {
         @Override
-        public int compare(UserPostModel model1, UserPostModel model2) {
+        public int compare(UserModel_worker model1, UserModel_worker model2) {
             return model1.getCompanyName().compareTo(model2.getCompanyName());
         }
     };
 
-    public static final Comparator<UserPostModel> By_TITLE_DESCENDING = new Comparator<UserPostModel>() {
+    public static final Comparator<UserModel_worker> By_TITLE_DESCENDING = new Comparator<UserModel_worker>() {
         @Override
-        public int compare(UserPostModel model1, UserPostModel model2) {
+        public int compare(UserModel_worker model1, UserModel_worker model2) {
             return model2.getCompanyName().compareTo(model1.getCompanyName());
         }
     };

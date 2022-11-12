@@ -14,14 +14,14 @@
         android:background="#FFECD0"
         android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center"
-        android:text="FINDING WORKER"
+        android:text="FINDING JOB"
         android:textColor="@color/black"
         android:textSize="27sp"
         android:textStyle="bold" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="450dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycleView"

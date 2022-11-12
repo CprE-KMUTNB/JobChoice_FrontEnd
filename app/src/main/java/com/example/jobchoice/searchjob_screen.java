@@ -84,7 +84,8 @@ public class searchjob_screen extends Fragment {
         yourpost_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(),user_all_post_screen.class);
+                Intent intent = new Intent(getContext(),user_all_jobpost_screen.class);
+                intent.putExtra("email",email_str);
                 startActivity(intent);
             }
         });

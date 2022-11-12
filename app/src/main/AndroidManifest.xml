@@ -21,6 +21,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".user_all_workerpost_detail_screen"
+            android:exported="false" />
+        <activity
+            android:name=".user_all_jobpost_detail_screen"
+            android:exported="false" />
+        <activity
+            android:name=".user_all_jobpost_screen"
+            android:exported="false" />
+        <activity
+            android:name=".user_all_workerpost_screen"
+            android:exported="false" />
+        <activity
             android:name=".searchjob_detail_screen"
             android:exported="false" />
         <activity

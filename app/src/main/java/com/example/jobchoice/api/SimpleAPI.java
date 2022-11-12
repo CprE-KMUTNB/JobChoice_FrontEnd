@@ -30,23 +30,38 @@ public interface SimpleAPI {
     @GET("user/get/{email}")
     Call<ProfileGet> profilepushGet(@Path("email") String email);
 
-    @GET("/user/get/post/workerfinding/count")
+    @GET("/user/get/all/post/worker/count/{email}")
+    Call<GetPostCount> userworkerfindingpostcountGet(@Path("email") String email);
+
+    @GET("/user/get/all/post/job/count/{email}")
+    Call<GetPostCount> userjobfindingpostcountGet(@Path("email") String email);
+
+    @GET("/user/get/all/post/workerfinding/count")
     Call<GetPostCount> workerfindingpostcountGet();
 
-    @GET("/user/get/post/jobfinding/count")
+    @GET("/user/get/all/post/jobfinding/count")
     Call<GetPostCount> jobfindingpostcountGet();
 
-    @GET("/user/get/post/workerfinding")
+    @GET("/user/get/all/post/worker/{email}")
+    Call<List<WokerFindingSearchBox>> userworkerfindingpostGet(@Path("email") String email);
+
+    @GET("/user/get/all/post/job/{email}")
+    Call<List<JobFindingSearchBox>> userjobfindingpostGet(@Path("email") String email);
+
+    @GET("/user/get/all/post/workerfinding")
     Call<List<WokerFindingSearchBox>> workerfindingsearchGet();
 
-    @GET("/user/get/post/jobfinding")
+    @GET("/user/get/all/post/jobfinding")
     Call<List<JobFindingSearchBox>> jobfindingsearchGet();
 
     @DELETE("user/delete/{email}")
     Call<Void> userpushDelete(@Path("email") String email);
 
-    @DELETE("user/post/delete/{email}/{title}")
-    Call<Void> userpushPostDelete(@Path("email") String email,@Path("title") String title);
+    @DELETE("/user/post/worker/delete/{email}/{user}/{jobTitle}")
+    Call<Void> userworkerpostDelete(@Path("email") String email,@Path("user") String user,@Path("jobTitle") String jobTitle);
+
+    @DELETE("/user/post/job/delete/{email}/{user}/{jobTitle}")
+    Call<Void> userjobpostDelete(@Path("email") String email,@Path("user") String user,@Path("jobTitle") String jobTitle);
 
     @POST("user/update/{id}")
     Call<EditProfilePut> editprofilepushPut(@Path("id") String id, @Body EditProfilePut editProfilePatch);
