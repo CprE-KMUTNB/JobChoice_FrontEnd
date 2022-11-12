@@ -34,7 +34,9 @@ class JobFinding_screen : AppCompatActivity() {
     lateinit var uri : Uri
     lateinit var path: String
 
-
+    companion object {
+        val IMAGE_REQUEST_CODE = 100
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,7 +63,7 @@ class JobFinding_screen : AppCompatActivity() {
                 val intent = Intent(Intent.ACTION_PICK)
                 intent.type = "image/*"
                 intent.setAction(Intent.ACTION_GET_CONTENT)
-                startActivityForResult(intent, WorkerFinding_screen.IMAGE_REQUEST_CODE)
+                startActivityForResult(intent, JobFinding_screen.IMAGE_REQUEST_CODE)
             }else{
                 ActivityCompat.requestPermissions(
                     this, arrayOf(

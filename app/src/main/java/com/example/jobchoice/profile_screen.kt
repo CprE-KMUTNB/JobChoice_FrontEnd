@@ -1,16 +1,18 @@
 package com.example.jobchoice
 
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.jobchoice.api.LoginPost
+import com.example.jobchoice.api.EditProfileImage
 import com.example.jobchoice.api.ProfileGet
 import com.example.jobchoice.api.SimpleAPI
 import retrofit2.Call
@@ -21,8 +23,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 class profile_screen : Fragment() {
+    lateinit var image_view : ImageView
     lateinit var Edit_btn : Button
     lateinit var deleteAccount_btn : Button
+    lateinit var changeProfile_btn : Button
     lateinit var firstname_txt: TextView
     lateinit var lastname_txt: TextView
     lateinit var email_txt: TextView
@@ -30,8 +34,6 @@ class profile_screen : Fragment() {
     lateinit var aboutme_txt: TextView
     lateinit var simpleAPI: SimpleAPI
     lateinit var proflie : ProfileGet
-    var email : String? = ""
-
     var profileEdit_screen = profileEdit_screen()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,6 +51,7 @@ class profile_screen : Fragment() {
         val email = args?.get("email")
         val email_str = email.toString()
 
+        image_view = v.findViewById(R.id.image_view)
         firstname_txt = v.findViewById(R.id.firstname_txt)
         lastname_txt = v.findViewById(R.id.lastname_txt)
         email_txt = v.findViewById(R.id.email_txt)
@@ -71,6 +74,9 @@ class profile_screen : Fragment() {
                     email_txt.setText(proflie.email)
                     password_txt.setText(proflie.password)
                     aboutme_txt.setText(proflie.aboutme)
+                    val path = proflie.file
+                    val bitmap = BitmapFactory.decodeFile(path)
+                    image_view.setImageBitmap(bitmap)
                 }else{
 
                 }
@@ -78,6 +84,15 @@ class profile_screen : Fragment() {
 
             override fun onFailure(call: Call<ProfileGet>, t: Throwable) {
             }
+        })
+
+        changeProfile_btn = v.findViewById(R.id.changeProfile_btn)
+        changeProfile_btn.setOnClickListener(View.OnClickListener {
+            val showPopUp = changeprofilePopUp_screen()
+            val bundle = Bundle()
+            bundle.putString("email",email_str)
+            showPopUp.arguments = bundle
+            showPopUp.show((activity as AppCompatActivity).supportFragmentManager,"showPopUp")
         })
 
         Edit_btn = v.findViewById(R.id.Edit_btn)
@@ -91,6 +106,7 @@ class profile_screen : Fragment() {
         }
         return v;
     }
+
     private fun EditProfile(email : String){
         val intent = Intent(this@profile_screen.requireContext(),profileEdit_screen::class.java)
         intent.putExtra("email",email)

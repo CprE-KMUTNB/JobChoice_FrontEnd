@@ -48,7 +48,6 @@ class profileEdit_screen : AppCompatActivity() {
                 email_edittxt.getText().toString(),
                 password_edittxt.getText().toString(),
                 aboutme_edittxt.getText().toString()
-
             )
         })
     }

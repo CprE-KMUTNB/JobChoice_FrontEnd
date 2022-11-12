@@ -1,14 +1,15 @@
 package com.example.jobchoice.api;
 
 public class RegisterPost {
-    private String email,password, firstname, lastname,aboutme;
+    private String email,password, firstname, lastname,aboutme,file;
 
-    public RegisterPost(String email, String password ,String firstname, String lastname,String aboutme){
+    public RegisterPost(String email, String password ,String firstname, String lastname,String aboutme,String file){
         this.email = email;
         this.password = password;
         this.firstname = firstname;
         this.lastname = lastname;
         this.aboutme = aboutme;
+        this.file = file;
     }
 
     public String getUsername(){
@@ -30,4 +31,9 @@ public class RegisterPost {
     public String getContact(){
         return aboutme;
     }
+
+    public String getFile(){
+        return file;
+    }
+
 }

@@ -67,7 +67,10 @@ public interface SimpleAPI {
     @DELETE("/user/post/job/delete/{email}/{user}/{jobTitle}")
     Call<Void> userjobpostDelete(@Path("email") String email,@Path("user") String user,@Path("jobTitle") String jobTitle);
 
-    @POST("user/update/{id}")
-    Call<EditProfilePut> editprofilepushPut(@Path("id") String id, @Body EditProfilePut editProfilePatch);
+    @POST("user/update/{email}")
+    Call<EditProfilePut> editprofilepushPut(@Path("email") String email, @Body EditProfilePut editProfilePatch);
+
+    @POST("/user/profile/update/{email}")
+    Call<EditProfileImage> editprofileimagepushPut(@Path("email") String email, @Body EditProfileImage editProfileImage);
 
 }

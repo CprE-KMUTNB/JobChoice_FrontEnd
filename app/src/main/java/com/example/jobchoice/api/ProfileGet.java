@@ -1,7 +1,7 @@
 package com.example.jobchoice.api;
 
 public class ProfileGet {
-    private String firstname, lastname, email, password,aboutme;
+    private String firstname, lastname, email, password,aboutme,file;
 
     public String getFirstname(){
         return firstname;
@@ -21,6 +21,8 @@ public class ProfileGet {
 
     public String getAboutme() {return aboutme;}
 
+    public String getFile() {return file;}
+
     public void setFirstname(String firstname){ this.firstname = firstname;}
 
     public void setLastname(String lastname){
@@ -38,4 +40,7 @@ public class ProfileGet {
     public void setAboutme(String aboutme){
         this.aboutme = aboutme;
     }
+
+    public void setFile(String file) { this.file = file; }
+
 }
