@@ -48,6 +48,8 @@ public class UserAdapter_job extends RecyclerView.Adapter<UserHolder_job> implem
                 String jobTitle_str =  userModel_jobs.get(position).getJobTitle();
                 String education_str =  userModel_jobs.get(position).getDetails();
                 String ability_str =  userModel_jobs.get(position).getAbility();
+                String file_str = userModel_jobs.get(position).getFile();
+
 
                 Intent intent = new Intent(c, user_all_jobpost_detail_screen.class);
                 intent.putExtra("email",email_str);
@@ -55,6 +57,7 @@ public class UserAdapter_job extends RecyclerView.Adapter<UserHolder_job> implem
                 intent.putExtra("jobTitle",jobTitle_str);
                 intent.putExtra("requirement",education_str);
                 intent.putExtra("salary",ability_str);
+                intent.putExtra("file",file_str);
                 c.startActivity(intent);
             }
         });

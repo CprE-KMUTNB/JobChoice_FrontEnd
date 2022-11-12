@@ -48,6 +48,7 @@ public class UserAdapter_worker extends RecyclerView.Adapter<UserHolder_worker> 
                 String jobTitle_str =  userModel_workers.get(position).getJobTitle();
                 String requirement_str =  userModel_workers.get(position).getRequirement();
                 String salary_str =  userModel_workers.get(position).getSalary();
+                String file_str = userModel_workers.get(position).getFile();
 
                 Intent intent = new Intent(c, user_all_workerpost_detail_screen.class);
                 intent.putExtra("email",email_str);
@@ -55,6 +56,7 @@ public class UserAdapter_worker extends RecyclerView.Adapter<UserHolder_worker> 
                 intent.putExtra("jobTitle",jobTitle_str);
                 intent.putExtra("requirement",requirement_str);
                 intent.putExtra("salary",salary_str);
+                intent.putExtra("file",file_str);
                 c.startActivity(intent);
             }
         });

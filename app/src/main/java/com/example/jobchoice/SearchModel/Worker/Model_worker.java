@@ -3,7 +3,7 @@ package com.example.jobchoice.SearchModel.Worker;
 import java.util.Comparator;
 
 public class Model_worker {
-    private String companyName, jobTitle, requirement,salary;
+    private String companyName, jobTitle, requirement,salary,file;
 
     public String getCompanyName(){
         return companyName;
@@ -35,8 +35,14 @@ public class Model_worker {
         return salary;
     }
 
-    public void setSalary(String salary){
-        this.salary = salary;
+    public void setSalary(String salary){ this.salary = salary;}
+
+    public String getFile(){
+        return file;
+    }
+
+    public void setFile(String file){
+        this.file = file;
     }
 
     public static final Comparator<Model_worker> By_TITLE_ASCENDING = new Comparator<Model_worker>() {

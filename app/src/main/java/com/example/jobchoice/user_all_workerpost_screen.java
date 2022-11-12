@@ -181,6 +181,7 @@ public class user_all_workerpost_screen extends AppCompatActivity {
             userModel_worker.setJobTitle(wokerFindingSearchBoxList.get(i).getJobTitle());
             userModel_worker.setRequirement(wokerFindingSearchBoxList.get(i).getRequirement());
             userModel_worker.setSalary(wokerFindingSearchBoxList.get(i).getSalary());
+            userModel_worker.setFile(wokerFindingSearchBoxList.get(i).getFile());
             userModel_workers.add(userModel_worker);
         }
 

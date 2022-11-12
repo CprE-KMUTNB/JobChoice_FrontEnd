@@ -203,6 +203,7 @@ public class searchworker_screen extends Fragment {
             model_worker.setJobTitle(wokerFindingSearchBoxList.get(i).getJobTitle());
             model_worker.setRequirement(wokerFindingSearchBoxList.get(i).getRequirement());
             model_worker.setSalary(wokerFindingSearchBoxList.get(i).getSalary());
+            model_worker.setFile(wokerFindingSearchBoxList.get(i).getFile());
             model_workers.add(model_worker);
         }
 

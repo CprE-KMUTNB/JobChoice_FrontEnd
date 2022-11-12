@@ -47,12 +47,15 @@ public class MyAdapter_job extends RecyclerView.Adapter<MyHolder_job> implements
                 String jobTitle_str = model_jobs.get(position).getJobTitle();
                 String education_str = model_jobs.get(position).getDetails();
                 String ability_str = model_jobs.get(position).getAbility();
+                String file_str = model_jobs.get(position).getFile();
+
 
                 Intent intent = new Intent(c, searchjob_detail_screen.class);
                 intent.putExtra("fullname",fullname_str);
                 intent.putExtra("jobTitle",jobTitle_str);
                 intent.putExtra("education",education_str);
                 intent.putExtra("ability",ability_str);
+                intent.putExtra("file",file_str);
                 c.startActivity(intent);
             }
         });

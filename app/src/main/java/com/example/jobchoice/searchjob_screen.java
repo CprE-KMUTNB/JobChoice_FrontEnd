@@ -202,6 +202,7 @@ public class searchjob_screen extends Fragment {
             model_job.setJobTitle(jobFindingSearchBoxList.get(i).getJobTitle());
             model_job.setDetails(jobFindingSearchBoxList.get(i).getEducation());
             model_job.setAbility(jobFindingSearchBoxList.get(i).getAbility());
+            model_job.setFile(jobFindingSearchBoxList.get(i).getFile());
             model_jobs.add(model_job);
         }
 

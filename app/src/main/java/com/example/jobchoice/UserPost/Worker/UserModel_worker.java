@@ -3,7 +3,7 @@ package com.example.jobchoice.UserPost.Worker;
 import java.util.Comparator;
 
 public class UserModel_worker {
-    private String email,companyName, jobTitle, requirement,salary;
+    private String email,companyName, jobTitle, requirement,salary,file;
 
     public String getEmail(){
         return email;
@@ -27,6 +27,14 @@ public class UserModel_worker {
 
     public void setJobTitle(String jobTitle){
         this.jobTitle = jobTitle;
+    }
+
+    public String getFile(){
+        return file;
+    }
+
+    public void setFile(String file){
+        this.file = file;
     }
 
 

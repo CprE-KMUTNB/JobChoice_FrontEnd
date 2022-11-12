@@ -178,6 +178,7 @@ public class user_all_jobpost_screen extends AppCompatActivity {
             userModel_job.setJobTitle(jobFindingSearchBoxList.get(i).getJobTitle());
             userModel_job.setDetails(jobFindingSearchBoxList.get(i).getEducation());
             userModel_job.setAbility(jobFindingSearchBoxList.get(i).getAbility());
+            userModel_job.setFile(jobFindingSearchBoxList.get(i).getFile());
             userModel_jobs.add(userModel_job);
         }
 

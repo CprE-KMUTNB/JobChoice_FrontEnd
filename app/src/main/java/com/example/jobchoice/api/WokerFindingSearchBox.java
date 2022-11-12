@@ -1,9 +1,9 @@
 package com.example.jobchoice.api;
 
 public class WokerFindingSearchBox {
-    private String email,user,JobTitle,requirement,details,Salary,contact;
+    private String email,user,JobTitle,requirement,details,Salary,contact,file;
 
-    public WokerFindingSearchBox(String email,String user, String JobTitle, String requirement, String details, String Salary,String contact){
+    public WokerFindingSearchBox(String email,String user, String JobTitle, String requirement, String details, String Salary,String contact,String file){
         this.email = email;
         this.user = user;
         this.JobTitle = JobTitle;
@@ -11,6 +11,7 @@ public class WokerFindingSearchBox {
         this.details = details;
         this.Salary = Salary;
         this.contact = contact;
+        this.file = file;
     }
     public String getEmail(){
         return email;
@@ -38,6 +39,10 @@ public class WokerFindingSearchBox {
 
     public String getContact(){
         return contact;
+    }
+
+    public String getFile(){
+        return file;
     }
 
 }

@@ -4,16 +4,20 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.jobchoice.DeletePostPopup.workerpost_deletedPopUp_screen;
 
 public class user_all_workerpost_detail_screen extends AppCompatActivity {
     TextView companyName_txtView, jobTitle_txtView, requirement_txtView, salary_txtView;
+    ImageView image_view;
     Button deletePost_btn;
 
     @Override
@@ -28,6 +32,7 @@ public class user_all_workerpost_detail_screen extends AppCompatActivity {
         jobTitle_txtView = findViewById(R.id.jobTitle_txtview);
         requirement_txtView = findViewById(R.id.requirement_txtview);
         salary_txtView = findViewById(R.id.salary_txtview);
+        image_view = findViewById(R.id.image_view);
 
         Intent intent = getIntent();
         String email_str = intent.getStringExtra("email");
@@ -35,12 +40,16 @@ public class user_all_workerpost_detail_screen extends AppCompatActivity {
         String jobTitle_str = intent.getStringExtra("jobTitle");
         String requirement_str = intent.getStringExtra("requirement");
         String salary_str = intent.getStringExtra("salary");
+        String file_str = intent.getStringExtra("file");
 
         actionBar.setTitle(companyName_str);
         companyName_txtView.setText(companyName_str);
         jobTitle_txtView.setText(jobTitle_str);
         requirement_txtView.setText(requirement_str);
         salary_txtView.setText(salary_str);
+
+        Bitmap bitmap = BitmapFactory.decodeFile(file_str);
+        image_view.setImageBitmap(bitmap);
 
         deletePost_btn.setOnClickListener(new View.OnClickListener() {
             @Override

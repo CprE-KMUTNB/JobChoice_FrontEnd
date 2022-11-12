@@ -341,35 +341,15 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/custom_dashed_border">
 
                     <ImageView
                         android:id="@+id/image_view"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:src="@drawable/ic_baseline_image_24" />
-
-                    <TextView
-                        android:id="@+id/image_txtview"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:gravity="center"
-                        android:layout_below="@id/image_view"
-                        android:fontFamily="sans-serif-condensed-light"
-                        android:text="Tap to Select image"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <ProgressBar
-                        android:id="@+id/progress_bar"
-                        android:layout_below="@id/image_txtview"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:max="100"
-                        android:progress="40" />
-
                 </RelativeLayout>
 
             </LinearLayout>
@@ -398,9 +378,9 @@
                     android:fontFamily="sans-serif-condensed-light"
                     android:gravity="center"
                     android:text="Upload Image"
-                    android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/add_btn"
@@ -413,9 +393,9 @@
                     android:gravity="center"
                     android:paddingLeft="10dp"
                     android:text="ADD"
-                    android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

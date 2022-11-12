@@ -40,6 +40,7 @@ public class MyAdapter_worker extends RecyclerView.Adapter<MyHolder_worker> impl
         myHolder.requirement_txtview.setText(model_workers.get(position).getRequirement());
         myHolder.salary_txtview.setText(model_workers.get(position).getSalary());
 
+
         myHolder.setItemClickListener(new ItemClickListener_worker() {
             @Override
             public void onItemClickListener_worker(View v, int position) {
@@ -47,12 +48,15 @@ public class MyAdapter_worker extends RecyclerView.Adapter<MyHolder_worker> impl
                 String jobTitle_str = model_workers.get(position).getJobTitle();
                 String requirement_str = model_workers.get(position).getRequirement();
                 String salary_str = model_workers.get(position).getSalary();
+                String file_str = model_workers.get(position).getFile();
+
 
                 Intent intent = new Intent(c, searchworker_detail_screen.class);
                 intent.putExtra("companyName",companyName_str);
                 intent.putExtra("jobTitle",jobTitle_str);
                 intent.putExtra("requirement",requirement_str);
                 intent.putExtra("salary",salary_str);
+                intent.putExtra("file",file_str);
                 c.startActivity(intent);
             }
         });

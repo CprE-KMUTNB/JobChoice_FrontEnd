@@ -2,7 +2,7 @@ package com.example.jobchoice.UserPost.Job;
 import java.util.Comparator;
 
 public class UserModel_job {
-    private String email,user,JobTitle,ability,details;
+    private String email,user,JobTitle,ability,details,file;
 
     public String getEmail(){
         return email;
@@ -37,6 +37,14 @@ public class UserModel_job {
     public String getDetails(){ return details; }
 
     public void setDetails(String details){ this.details = details; }
+
+    public String getFile(){
+        return file;
+    }
+
+    public void setFile(String file){
+        this.file = file;
+    }
 
     public static final Comparator<UserModel_job> By_TITLE_ASCENDING = new Comparator<UserModel_job>() {
         @Override
