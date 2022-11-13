@@ -3,7 +3,7 @@ package com.example.jobchoice.UserPost.Worker;
 import java.util.Comparator;
 
 public class UserModel_worker {
-    private String email,companyName, jobTitle, requirement,salary,file;
+    private String email,companyName, jobTitle, requirement,salary,detail,contact,file;
 
     public String getEmail(){
         return email;
@@ -53,6 +53,22 @@ public class UserModel_worker {
 
     public void setSalary(String salary){
         this.salary = salary;
+    }
+
+    public String getDetail(){
+        return detail;
+    }
+
+    public void setDetail(String detail){
+        this.detail = detail;
+    }
+
+    public String getContact(){
+        return contact;
+    }
+
+    public void setContact(String contact){
+        this.contact = contact;
     }
 
     public static final Comparator<UserModel_worker> By_TITLE_ASCENDING = new Comparator<UserModel_worker>() {

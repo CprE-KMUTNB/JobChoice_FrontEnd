@@ -2,7 +2,7 @@ package com.example.jobchoice.UserPost.Job;
 import java.util.Comparator;
 
 public class UserModel_job {
-    private String email,user,JobTitle,ability,details,file;
+    private String email,user,JobTitle,ability,details,salaryNeed,contact,file;
 
     public String getEmail(){
         return email;
@@ -37,6 +37,14 @@ public class UserModel_job {
     public String getDetails(){ return details; }
 
     public void setDetails(String details){ this.details = details; }
+
+    public String getSalaryNeed(){ return salaryNeed; }
+
+    public void setSalaryNeed(String salaryNeed){ this.salaryNeed = salaryNeed; }
+
+    public String getContact(){ return contact; }
+
+    public void setContact(String contact){ this.contact = contact; }
 
     public String getFile(){
         return file;

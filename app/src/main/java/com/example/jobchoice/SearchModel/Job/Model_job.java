@@ -3,7 +3,7 @@ package com.example.jobchoice.SearchModel.Job;
 import java.util.Comparator;
 
 public class Model_job {
-    private String user,JobTitle,ability,details,file;
+    private String user,JobTitle,ability,details,salaryNeed,contact,file;
 
     public String getFullname(){
         return user;
@@ -30,6 +30,14 @@ public class Model_job {
     public String getDetails(){ return details; }
 
     public void setDetails(String details){ this.details = details; }
+
+    public String getSalaryNeed(){ return salaryNeed; }
+
+    public void setSalaryNeed(String salaryNeed){ this.salaryNeed = salaryNeed; }
+
+    public String getContact(){ return contact; }
+
+    public void setContact(String contact){ this.contact = contact; }
 
     public String getFile(){
         return file;

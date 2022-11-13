@@ -47,6 +47,8 @@ public class MyAdapter_job extends RecyclerView.Adapter<MyHolder_job> implements
                 String jobTitle_str = model_jobs.get(position).getJobTitle();
                 String education_str = model_jobs.get(position).getDetails();
                 String ability_str = model_jobs.get(position).getAbility();
+                String salaryNeed_str = model_jobs.get(position).getSalaryNeed();
+                String contact_str = model_jobs.get(position).getContact();
                 String file_str = model_jobs.get(position).getFile();
 
 
@@ -55,6 +57,8 @@ public class MyAdapter_job extends RecyclerView.Adapter<MyHolder_job> implements
                 intent.putExtra("jobTitle",jobTitle_str);
                 intent.putExtra("education",education_str);
                 intent.putExtra("ability",ability_str);
+                intent.putExtra("salaryNeed",salaryNeed_str);
+                intent.putExtra("contact",contact_str);
                 intent.putExtra("file",file_str);
                 c.startActivity(intent);
             }

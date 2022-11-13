@@ -21,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.example.jobchoice.SearchModel.Worker.Model_worker;
 import com.example.jobchoice.SearchModel.Worker.MyAdapter_worker;
@@ -115,7 +116,7 @@ public class searchworker_screen extends Fragment {
         });
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.sorting) {
@@ -123,7 +124,8 @@ public class searchworker_screen extends Fragment {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+        return false;
+    }*/
 
     private void sortDailog(){
         String[] options = {"Ascending","Descending"};
@@ -136,13 +138,13 @@ public class searchworker_screen extends Fragment {
             public void onClick(DialogInterface dialogInterface, int i) {
                 if(i == 0){
                     SharedPreferences.Editor editor = preferences.edit();
-                    editor.putString("Sort","Ascending");
+                    editor.putString("Sort","ascending");
                     editor.apply();
                     getMyList();
                 }
                 if(i == 1){
                     SharedPreferences.Editor editor = preferences.edit();
-                    editor.putString("Sort","Descending");
+                    editor.putString("Sort","descending");
                     editor.apply();
                     getMyList();
                 }
@@ -203,17 +205,19 @@ public class searchworker_screen extends Fragment {
             model_worker.setJobTitle(wokerFindingSearchBoxList.get(i).getJobTitle());
             model_worker.setRequirement(wokerFindingSearchBoxList.get(i).getRequirement());
             model_worker.setSalary(wokerFindingSearchBoxList.get(i).getSalary());
+            model_worker.setDetail(wokerFindingSearchBoxList.get(i).getDetails());
+            model_worker.setContact(wokerFindingSearchBoxList.get(i).getContact());
             model_worker.setFile(wokerFindingSearchBoxList.get(i).getFile());
             model_workers.add(model_worker);
         }
 
-        String SortSetting = preferences.getString("Sort","Ascending");
-        if(SortSetting.equals("Ascending")){
+        /*String SortSetting = preferences.getString("Sort","ascending");
+        if(SortSetting.equals("ascending")){
             Collections.sort(model_workers,Model_worker.By_TITLE_ASCENDING);
         }
-        else if(SortSetting.equals("Descending")){
+        else if(SortSetting.equals("descending")){
             Collections.sort(model_workers,Model_worker.By_TITLE_DESCENDING);
-        }
+        }*/
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         myAdapter_worker = new MyAdapter_worker(getContext(),model_workers);

@@ -48,6 +48,8 @@ public class MyAdapter_worker extends RecyclerView.Adapter<MyHolder_worker> impl
                 String jobTitle_str = model_workers.get(position).getJobTitle();
                 String requirement_str = model_workers.get(position).getRequirement();
                 String salary_str = model_workers.get(position).getSalary();
+                String detail_str = model_workers.get(position).getDetail();
+                String contact_str = model_workers.get(position).getContact();
                 String file_str = model_workers.get(position).getFile();
 
 
@@ -56,6 +58,8 @@ public class MyAdapter_worker extends RecyclerView.Adapter<MyHolder_worker> impl
                 intent.putExtra("jobTitle",jobTitle_str);
                 intent.putExtra("requirement",requirement_str);
                 intent.putExtra("salary",salary_str);
+                intent.putExtra("detail",detail_str);
+                intent.putExtra("contact",contact_str);
                 intent.putExtra("file",file_str);
                 c.startActivity(intent);
             }

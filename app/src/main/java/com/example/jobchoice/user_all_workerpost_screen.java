@@ -86,7 +86,7 @@ public class user_all_workerpost_screen extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.sorting) {
@@ -94,7 +94,7 @@ public class user_all_workerpost_screen extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     private void sortDailog(){
         String[] options = {"Ascending","Descending"};
@@ -181,17 +181,19 @@ public class user_all_workerpost_screen extends AppCompatActivity {
             userModel_worker.setJobTitle(wokerFindingSearchBoxList.get(i).getJobTitle());
             userModel_worker.setRequirement(wokerFindingSearchBoxList.get(i).getRequirement());
             userModel_worker.setSalary(wokerFindingSearchBoxList.get(i).getSalary());
+            userModel_worker.setDetail(wokerFindingSearchBoxList.get(i).getDetails());
+            userModel_worker.setContact(wokerFindingSearchBoxList.get(i).getContact());
             userModel_worker.setFile(wokerFindingSearchBoxList.get(i).getFile());
             userModel_workers.add(userModel_worker);
         }
 
-        String SortSetting = preferences.getString("Sort","Ascending");
+        /*String SortSetting = preferences.getString("Sort","Ascending");
         if(SortSetting.equals("Ascending")){
             Collections.sort(userModel_workers,UserModel_worker.By_TITLE_ASCENDING);
         }
         else if(SortSetting.equals("Descending")){
             Collections.sort(userModel_workers,UserModel_worker.By_TITLE_DESCENDING);
-        }
+        }*/
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         userAdapter_worker = new UserAdapter_worker(this,userModel_workers);

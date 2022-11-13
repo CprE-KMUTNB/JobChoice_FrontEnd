@@ -114,7 +114,7 @@ public class searchjob_screen extends Fragment {
         });
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.sorting) {
@@ -122,7 +122,7 @@ public class searchjob_screen extends Fragment {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     private void sortDailog(){
         String[] options = {"Ascending","Descending"};
@@ -202,17 +202,19 @@ public class searchjob_screen extends Fragment {
             model_job.setJobTitle(jobFindingSearchBoxList.get(i).getJobTitle());
             model_job.setDetails(jobFindingSearchBoxList.get(i).getEducation());
             model_job.setAbility(jobFindingSearchBoxList.get(i).getAbility());
+            model_job.setSalaryNeed(jobFindingSearchBoxList.get(i).getSalaryNeeded());
+            model_job.setContact(jobFindingSearchBoxList.get(i).getContact());
             model_job.setFile(jobFindingSearchBoxList.get(i).getFile());
             model_jobs.add(model_job);
         }
 
-        String SortSetting = preferences.getString("Sort","Ascending");
+        /*String SortSetting = preferences.getString("Sort","Ascending");
         if(SortSetting.equals("Ascending")){
             Collections.sort(model_jobs,Model_job.By_TITLE_ASCENDING);
         }
         else if(SortSetting.equals("Descending")){
             Collections.sort(model_jobs,Model_job.By_TITLE_DESCENDING);
-        }
+        }*/
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         myAdapter_job= new MyAdapter_job(getContext(),model_jobs);
