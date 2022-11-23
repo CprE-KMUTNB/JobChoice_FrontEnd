@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,6 +8,7 @@
     tools:context=".user_all_workerpost_screen">
 
     <TextView
+        android:id="@+id/userAllPost_Title"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#FFECD0"
@@ -16,39 +17,66 @@
         android:text="YOUR POST"
         android:textColor="@color/black"
         android:textSize="27sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
 
     <TextView
+        android:id="@+id/findworker_Title"
         android:layout_width="match_parent"
         android:layout_height="18dp"
+        android:layout_below="@id/userAllPost_Title"
         android:background="#FFECD0"
         android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center"
         android:text="(FIND WORKER)"
         android:textColor="@color/black"
-        android:textSize="15sp"/>
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userAllPost_Title"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/alert_txtview"
         android:layout_width="match_parent"
         android:layout_height="18dp"
+        android:layout_below="@id/findworker_Title"
         android:background="#FFECD0"
         android:fontFamily="sans-serif-condensed-medium"
         android:gravity="center"
         android:text=""
         android:textColor="@color/veryred"
         android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/findworker_Title"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ScrollView
+        android:id="@+id/scrollView6"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/alert_txtview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alert_txtview"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycleView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
     </ScrollView>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

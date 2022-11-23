@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,61 +14,89 @@
         android:id="@+id/Login_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
+        android:layout_alignParentTop="true"
         android:gravity="left"
         android:text="Login"
         android:textColor="@color/colorYellow"
         android:textSize="35dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.415" />
 
     <EditText
         android:id="@+id/email_edittxt"
-        android:hint="Email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:padding="20dp"
-        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:layout_below="@id/Login_txt"
         android:background="@drawable/custom_textview"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="20dp"
+        android:hint="Email"
         android:inputType="textEmailAddress"
-        app:met_textColorHint="@color/myTextColor"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Login_txt"
+        app:layout_constraintVertical_bias="0.065"
         app:met_baseColor="@color/myTextColor"
-        app:met_primaryColor="@color/myTextColor" />
+        app:met_primaryColor="@color/myTextColor"
+        app:met_textColorHint="@color/myTextColor" />
+
     <EditText
         android:id="@+id/password_edittxt"
-        android:hint="Password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:padding="20dp"
+        android:layout_below="@id/email_edittxt"
         android:background="@drawable/custom_textview"
         android:drawableLeft="@drawable/ic_baseline_lock_24"
         android:drawablePadding="20dp"
+        android:hint="Password"
         android:inputType="textPassword"
-        app:met_textColorHint="@color/myTextColor"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_edittxt"
+        app:layout_constraintVertical_bias="0.053"
         app:met_baseColor="@color/myTextColor"
-        app:met_primaryColor="@color/myTextColor" />
+        app:met_primaryColor="@color/myTextColor"
+        app:met_textColorHint="@color/myTextColor" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/password_edittxt"
         android:layout_margin="16dp"
         android:background="@color/colorYellow"
         android:text="LOGIN"
         android:textColor="#5C6BC0"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_edittxt"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/register_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="220dp"
-        android:layout_marginRight="20dp"
+        android:layout_below="@id/login_btn"
+        android:layout_margin="16dp"
+        android:layout_marginTop="8dp"
         android:background="@color/colorYellow"
         android:text="REGISTER"
         android:textColor="#5C6BC0"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_btn"
+        app:layout_constraintVertical_bias="0.0" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

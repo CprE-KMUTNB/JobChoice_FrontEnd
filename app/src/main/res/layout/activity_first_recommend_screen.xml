@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,30 +7,39 @@
     android:background="@color/appBG"
     tools:context=".FirstRecommend_screen">
 
-
     <TextView
         android:id="@+id/company_name_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFECD0"
         android:layout_margin="10dp"
+        android:background="#FFECD0"
         android:fontFamily="sans-serif-condensed-medium"
         android:gravity="start"
         android:text=""
         android:textColor="@color/black"
         android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <RelativeLayout
         android:id="@+id/location_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/company_name_field"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/custom_banner">
+        android:background="@drawable/custom_banner"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/company_name_field"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/location_txt"
@@ -64,24 +73,35 @@
     <ImageView
         android:id="@+id/image"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="210dp"
         android:layout_below="@+id/location_field"
-        android:layout_marginStart="20dp"
+        android:src="@drawable/profile"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/profile" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/location_field"
+        app:layout_constraintVertical_bias="0.0" />
 
     <RelativeLayout
         android:id="@+id/other"
         android:layout_width="match_parent"
-        android:layout_height="340dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_height="250dp"
         android:layout_below="@+id/image"
-        android:background="@drawable/custom_banner">
+        android:background="@drawable/custom_banner"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image"
+        app:layout_constraintVertical_bias="0.0">
 
         <ScrollView
             android:id="@+id/scrollView"
@@ -228,18 +248,5 @@
             </RelativeLayout>
         </ScrollView>
     </RelativeLayout>
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_below="@id/other"
-        android:id="@+id/goback_btn"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/colorYellow"
-        android:drawableLeft="@drawable/ic_baseline_arrow_back_ios_new_24"
-        android:fontFamily="sans-serif-condensed-light"
-        android:gravity="center"
-        android:paddingLeft="10dp"
-        android:text="GO BACK"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

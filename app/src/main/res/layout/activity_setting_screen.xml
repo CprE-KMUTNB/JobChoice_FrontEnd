@@ -8,7 +8,7 @@
     tools:context=".setting_screen">
 
     <TextView
-        android:id="@+id/seTitle"
+        android:id="@+id/setTitle"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#FFECD0"
@@ -18,20 +18,26 @@
         android:textColor="@color/black"
         android:textSize="27sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024"
+        tools:layout_editor_absoluteX="-16dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/setTitle"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seTitle"
-        app:layout_constraintVertical_bias="0.043"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setTitle"
+        app:layout_constraintVertical_bias="0.043">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp">
+
 
             <TextView
                 android:layout_width="265dp"
@@ -155,6 +161,4 @@
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
