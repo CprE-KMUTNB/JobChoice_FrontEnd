@@ -19,9 +19,10 @@
         android:textSize="27sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024"
-        tools:layout_editor_absoluteX="-16dp" />
+        app:layout_constraintVertical_bias="0.024" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,7 +41,7 @@
 
 
             <TextView
-                android:layout_width="265dp"
+                android:layout_width="240dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="15dp"
                 android:fontFamily="sans-serif-condensed-light"
@@ -68,7 +69,7 @@
             android:layout_height="60dp">
 
             <TextView
-                android:layout_width="265dp"
+                android:layout_width="240dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="15dp"
                 android:fontFamily="sans-serif-condensed-light"
@@ -96,7 +97,7 @@
             android:layout_height="60dp">
 
             <TextView
-                android:layout_width="265dp"
+                android:layout_width="240dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="15dp"
                 android:fontFamily="sans-serif-condensed-light"
@@ -124,7 +125,7 @@
             android:layout_height="60dp">
 
             <TextView
-                android:layout_width="265dp"
+                android:layout_width="240dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="15dp"
                 android:fontFamily="sans-serif-condensed-light"

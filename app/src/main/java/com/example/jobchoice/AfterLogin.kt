@@ -37,9 +37,6 @@ class AfterLogin : AppCompatActivity() {
                     R.id.searchjob -> {
                         fragment = searchjob_screen()
                     }
-                    R.id.map -> {
-                        fragment = map_screen()
-                    }
                     R.id.recommend -> {
                         fragment = recommend_screen()
                     }
