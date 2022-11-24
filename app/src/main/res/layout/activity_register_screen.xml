@@ -40,8 +40,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_txt"
-        app:layout_constraintVertical_bias="0.032"
+        app:layout_constraintTop_toBottomOf="@+id/lastname_edittxt"
+        app:layout_constraintVertical_bias="0.015"
         app:met_baseColor="@color/myTextColor"
         app:met_primaryColor="@color/myTextColor"
         app:met_textColorHint="@color/myTextColor" />
@@ -68,6 +68,28 @@
         app:met_textColorHint="@color/myTextColor" />
 
     <EditText
+        android:id="@+id/conPassword_edittxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/email_edittxt"
+        android:background="@drawable/green_textview"
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="10dp"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_edittxt"
+        app:layout_constraintVertical_bias="0.024"
+        app:met_baseColor="@color/myTextColor"
+        app:met_primaryColor="@color/myTextColor"
+        app:met_textColorHint="@color/myTextColor" />
+
+    <EditText
         android:id="@+id/firstname_edittxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -83,7 +105,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_edittxt"
+        app:layout_constraintTop_toBottomOf="@+id/register_txt"
         app:layout_constraintVertical_bias="0.015"
         app:met_baseColor="@color/myTextColor"
         app:met_primaryColor="@color/myTextColor"
@@ -105,7 +127,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstname_edittxt"
-        app:layout_constraintVertical_bias="0.017"
+        app:layout_constraintVertical_bias="0.014"
         app:met_baseColor="@color/myTextColor"
         app:met_primaryColor="@color/myTextColor"
         app:met_textColorHint="@color/myTextColor" />
@@ -126,7 +148,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastname_edittxt"
+        app:layout_constraintTop_toBottomOf="@+id/conPassword_edittxt"
         app:layout_constraintVertical_bias="0.022"
         app:met_baseColor="@color/myTextColor"
         app:met_primaryColor="@color/myTextColor"

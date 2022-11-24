@@ -30,7 +30,6 @@ class profile_screen : Fragment() {
     lateinit var firstname_txt: TextView
     lateinit var lastname_txt: TextView
     lateinit var email_txt: TextView
-    lateinit var password_txt: TextView
     lateinit var aboutme_txt: TextView
     lateinit var simpleAPI: SimpleAPI
     lateinit var proflie : ProfileGet
@@ -55,7 +54,6 @@ class profile_screen : Fragment() {
         firstname_txt = v.findViewById(R.id.firstname_txt)
         lastname_txt = v.findViewById(R.id.lastname_txt)
         email_txt = v.findViewById(R.id.email_txt)
-        password_txt = v.findViewById(R.id.password_txt)
         aboutme_txt = v.findViewById(R.id.aboutme_txt)
 
         val retrofit = Retrofit.Builder()
@@ -72,7 +70,6 @@ class profile_screen : Fragment() {
                     firstname_txt.setText(proflie.firstname)
                     lastname_txt.setText(proflie.lastname)
                     email_txt.setText(proflie.email)
-                    password_txt.setText(proflie.password)
                     aboutme_txt.setText(proflie.aboutme)
                     val path = proflie.file
                     val bitmap = BitmapFactory.decodeFile(path)

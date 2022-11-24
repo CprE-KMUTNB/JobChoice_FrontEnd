@@ -28,6 +28,7 @@ class Register_screen : AppCompatActivity() {
     private lateinit var image_view: ImageView;
     private lateinit var email_edittxt:EditText
     private lateinit var password_edittxt:EditText
+    private lateinit var conPassword_edittxt:EditText
     private lateinit var firstname_edittxt:EditText
     private lateinit var lastname_edittxt:EditText
     private lateinit var aboutme_edittxt:EditText
@@ -49,6 +50,7 @@ class Register_screen : AppCompatActivity() {
         image_view = findViewById<View>(R.id.image_view) as ImageView
         email_edittxt = findViewById<View>(R.id.email_edittxt) as EditText
         password_edittxt = findViewById<View>(R.id.password_edittxt) as EditText
+        conPassword_edittxt = findViewById<View>(R.id.conPassword_edittxt) as EditText
         firstname_edittxt = findViewById<View>(R.id.firstname_edittxt) as EditText
         lastname_edittxt = findViewById<View>(R.id.lastname_edittxt) as EditText
         aboutme_edittxt = findViewById<View>(R.id.aboutme_edittxt) as EditText
@@ -87,6 +89,14 @@ class Register_screen : AppCompatActivity() {
                 ).show()
                 return@OnClickListener
             }
+            if (TextUtils.isEmpty(conPassword_edittxt.text.toString())) {
+                Toast.makeText(
+                    this@Register_screen,
+                    "Confirm password cannot be null or empty",
+                    Toast.LENGTH_LONG
+                ).show()
+                return@OnClickListener
+            }
             if (TextUtils.isEmpty(firstname_edittxt.text.toString())) {
                 Toast.makeText(
                     this@Register_screen,
@@ -111,13 +121,22 @@ class Register_screen : AppCompatActivity() {
                 ).show()
                 return@OnClickListener
             }
-            Register(
-                email_edittxt.text.toString(),
-                password_edittxt.text.toString(),
-                firstname_edittxt.text.toString(),
-                lastname_edittxt.text.toString(),
-                aboutme_edittxt.text.toString()
-            )
+            if(conPassword_edittxt.text.toString() == password_edittxt.text.toString()){
+                Register(
+                    email_edittxt.text.toString(),
+                    password_edittxt.text.toString(),
+                    firstname_edittxt.text.toString(),
+                    lastname_edittxt.text.toString(),
+                    aboutme_edittxt.text.toString()
+                )
+            }else{
+                Toast.makeText(
+                    this@Register_screen,
+                    "Password not match",
+                    Toast.LENGTH_LONG
+                ).show()
+                return@OnClickListener
+            }
         })
     }
 
