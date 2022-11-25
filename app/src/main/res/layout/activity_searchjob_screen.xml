@@ -29,7 +29,7 @@
     <ScrollView
         android:id="@+id/search_scrollView"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="690dp"
         android:layout_below="@+id/jobFinding_Title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,13 +49,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_scrollView"
-        app:layout_constraintVertical_bias="0.887">
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/yourpost_btn"
